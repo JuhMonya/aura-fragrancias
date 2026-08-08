@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aura Fragrâncias | Catálogo</title>
+<meta name="description" content="Aura Fragrâncias — perfumes inspirados em grifes internacionais. Entrega em Natal e Nova Parnamirim, envio para todo o Brasil. Pedidos pelo WhatsApp.">
+<meta name="theme-color" content="#111111">
+<!-- Favicon: ícone que aparece na aba do navegador (a silhueta da logo) -->
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAAJFBMVEVpYVCWinHfzKUsKSRJRDnJuJWEeWSsnoFBPDMRERHw3LK2p4jc5wSpAAADCklEQVR42rWVvW8cRRjGf3O+u529GN3aSQQEiawblA4nUCRVjJQ2shuQqLyCwnxI8V4DURqfaUKqOyOULyF5T+lSxDEFKBJF8hdwNClQJE5IIKdhxxCye5+TYu8u3q9QoGyzs9JPz/vM8868K27w4qfA/wWKBz+CX3bOKCdfoXZUG7P79VxAXPV/+PucbOaWsB7Pv7PC6W6ewkh/+e3KdyzdsnMUZu5vq96FgL7K89Byrr351OLDbh7gnVK/P3A116vZQJf1U6/ubCk+GGQDPyI+YusCFErZgHN59Ifl2SDrOR7cTdN3bA8WARYOJYE9sx42uV2bkx0AdzTOd3Ie9tS9uufL5dejGIJj1m+xoMT2W4s4PsKJelFZXXRiJQz30Yo7BMa9spechIc3rm80C4AXfSpbjDtwPnq/sjd8V7pLFM6GUcnjh8KDHgr68BNZr2/KoBWZ1A8bzYO7EMP5/Vn+gYVHlS5ArZEIagTFIfDw8E0LoGnHgfBIgAYwa6u7HeCpigNG2FtjCHDROnPSBQMRT7I3nDeEDzDn60qAWJ/biHkoV27h0QdUU4R1rOblRFDyfXCHFdBfETb7OpBxYGB8rhxPrrng12W77FXacQ+7y4iNb/5ChiA/bciwtRoHZIgMd5cRDRdR7lWVGcRKDCTiIisWehN0yVY9I55DyQOF1rBnwb8+RvJMOuiW4nswHrTRCjeRZFe0+XOBJQ/efg/g6vTOj00Gx6qdwWz3eAcKpS6imlDAfFwzil3LBUaXJJZK3Yvy+mfmjmcBsD+nswZIo1GbeRL11s+eUZ+EEa7Glzk9BseVFwF4LQ0IPckECEUamFpXgDlKj8Gp9buAlXH9D0yv3mbyTAKTBtNaZXAU/IRCT0xWbSj6vp8sMSxPa/3X7+BENmBOVzpHYbqcyQF+nrgtQeHKT/dSgO0+b3Dw9cd3UkB/PH1mLCiydSMFFIPnOfS5fy29zV/HMVgArUtpwI5qRLNl288IKurWF0AJRapZBNEYthQIq9pJK5hqqhOs3c1QeEk/92eMFAhLgYdi7gAAAABJRU5ErkJggg==">
+<style>
+  :root{
+    --preto:#111111;
+    --dourado:#c9a24b;
+    --dourado-claro:#e8d8a8;
+    --cinza-claro:#f7f6f4;
+    --cinza:#e5e3df;
+    --branco:#ffffff;
+    --texto:#222222;
+    --texto-suave:#6b6b6b;
+    --whatsapp:#25d366;
+    --whatsapp-hover:#1ebe5b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:var(--cinza-claro);
+    color:var(--texto);
+    line-height:1.5;
+  }
+  header{
+    background:var(--preto);
+    color:var(--branco);
+    text-align:center;
+    padding:18px 20px 16px;
+    border-bottom:3px solid var(--dourado);
+  }
+  header .logo{
+    height:66px;
+    width:auto;
+    max-width:90%;
+    display:block;
+    margin:0 auto 8px;
+  }
+  header h1{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:2.4rem;
+    letter-spacing:3px;
+    color:var(--dourado-claro);
+    text-transform:uppercase;
+  }
+  .visualmente-oculto{
+    position:absolute;
+    width:1px; height:1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+  }
+  header p{
+    margin-top:2px;
+    font-size:0.9rem;
+    color:#cfcfcf;
+    letter-spacing:0.5px;
+  }
+  .banner-entrega{
+    margin-top:10px;
+    display:inline-flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+  }
+  .banner-entrega span{
+    background:rgba(201,162,75,0.12);
+    border:1px solid var(--dourado);
+    color:var(--dourado-claro);
+    font-size:0.78rem;
+    padding:6px 12px;
+    border-radius:20px;
+    letter-spacing:0.3px;
+  }
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:32px 16px 60px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  @media(min-width:640px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(min-width:960px){
+    .grid{grid-template-columns:repeat(4,1fr);}
+  }
+  .card{
+    background:var(--branco);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    border:1px solid var(--cinza);
+    display:flex;
+    flex-direction:column;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 24px rgba(0,0,0,0.12);
+  }
+  .card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+  }
+  .card-body{
+    padding:18px 18px 20px;
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+  }
+  .card-body h2{
+    font-size:1.05rem;
+    font-weight:600;
+    margin-bottom:6px;
+    color:var(--preto);
+  }
+  .card-body .desc{
+    font-size:0.82rem;
+    color:var(--texto-suave);
+    margin-bottom:12px;
+    flex-grow:1;
+  }
+  .preco{
+    font-size:1.25rem;
+    font-weight:700;
+    color:var(--dourado);
+    margin-bottom:14px;
+  }
+  .preco-original{
+    font-size:0.85rem;
+    color:var(--texto-suave);
+    text-decoration:line-through;
+    margin-right:6px;
+    font-weight:400;
+  }
+  .badge-off{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:var(--preto);
+    color:var(--dourado-claro);
+    font-size:0.72rem;
+    font-weight:700;
+    padding:4px 9px;
+    border-radius:4px;
+    letter-spacing:0.5px;
+  }
+  .card{position:relative;}
+  .btn-comprar{
+    background:var(--preto);
+    color:var(--dourado-claro);
+    border:none;
+    padding:12px 16px;
+    border-radius:6px;
+    font-size:0.9rem;
+    font-weight:600;
+    letter-spacing:0.5px;
+    cursor:pointer;
+    transition:background 0.2s ease;
+    text-transform:uppercase;
+  }
+  .btn-comprar:hover{
+    background:var(--dourado);
+    color:var(--preto);
+  }
+
+  /* Modal */
+  .overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+    z-index:1000;
+  }
+  .overlay.ativo{
+    display:flex;
+  }
+  .modal{
+    background:var(--branco);
+    width:100%;
+    max-width:440px;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:12px;
+    padding:28px 24px 24px;
+    position:relative;
+    animation:subir 0.25s ease;
+  }
+  @keyframes subir{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .fechar-modal{
+    position:absolute;
+    top:14px;
+    right:16px;
+    background:none;
+    border:none;
+    font-size:1.4rem;
+    cursor:pointer;
+    color:var(--texto-suave);
+    line-height:1;
+  }
+  .fechar-modal:hover{color:var(--preto);}
+  .modal h3{
+    font-size:1.1rem;
+    margin-bottom:4px;
+    color:var(--preto);
+  }
+  .resumo-produto{
+    background:var(--cinza-claro);
+    border:1px solid var(--cinza);
+    border-radius:8px;
+    padding:12px 14px;
+    margin:14px 0 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .resumo-produto span.nome{
+    font-weight:600;
+    font-size:0.92rem;
+  }
+  .resumo-produto span.valor{
+    font-weight:700;
+    color:var(--dourado);
+    font-size:0.95rem;
+  }
+  .modal form label{
+    display:block;
+    font-size:0.8rem;
+    font-weight:600;
+    margin:12px 0 5px;
+    color:var(--texto);
+  }
+  .modal form input{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--cinza);
+    border-radius:6px;
+    font-size:0.9rem;
+    background:var(--cinza-claro);
+  }
+  .modal form input:focus{
+    outline:none;
+    border-color:var(--dourado);
+    background:var(--branco);
+  }
+  .linha-dupla{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .frete-box{
+    background:var(--cinza-claro);
+    border:1px dashed var(--dourado);
+    border-radius:8px;
+    padding:14px;
+    margin-top:16px;
+  }
+  .frete-box h4{
+    font-size:0.85rem;
+    color:var(--preto);
+    margin-bottom:10px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  .frete-linha{
+    display:flex;
+    gap:8px;
+  }
+  .frete-linha input{
+    flex:1;
+    padding:10px 12px;
+    border:1px solid var(--cinza);
+    border-radius:6px;
+    font-size:0.9rem;
+    background:var(--branco);
+  }
+  .btn-frete{
+    background:var(--preto);
+    color:var(--dourado-claro);
+    border:none;
+    padding:0 16px;
+    border-radius:6px;
+    font-size:0.82rem;
+    font-weight:600;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .btn-frete:hover{background:var(--dourado); color:var(--preto);}
+  .frete-resultado{
+    margin-top:10px;
+    font-size:0.85rem;
+    color:var(--texto);
+    min-height:1.2em;
+  }
+  .frete-resultado.erro{ color:#c0392b; }
+  .frete-resultado strong{ color:var(--dourado); }
+  .total-pedido{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid var(--cinza);
+    font-size:1rem;
+  }
+  .total-pedido span.valor-total{
+    font-weight:700;
+    color:var(--preto);
+    font-size:1.15rem;
+  }
+  .btn-whatsapp{
+    width:100%;
+    margin-top:22px;
+    background:var(--whatsapp);
+    color:var(--branco);
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:background 0.2s ease;
+  }
+  .btn-whatsapp:hover{
+    background:var(--whatsapp-hover);
+  }
+  /* ===== Navegação ===== */
+  .navbar{
+    background:var(--preto);
+    border-bottom:1px solid rgba(201,162,75,0.25);
+    position:sticky;
+    top:0;
+    z-index:900;
+  }
+  .navbar ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    flex-wrap:wrap;
+    padding:8px 10px;
+    margin:0;
+  }
+  .navbar a{
+    display:block;
+    color:#d8d8d8;
+    text-decoration:none;
+    font-size:0.78rem;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    padding:8px 14px;
+    border-radius:4px;
+    transition:color .2s, background .2s;
+  }
+  .navbar a:hover{ color:var(--dourado-claro); }
+  .navbar a.ativo{
+    color:var(--preto);
+    background:var(--dourado-claro);
+    font-weight:600;
+  }
+
+  /* ===== Páginas ===== */
+  .pagina{ display:none; }
+  .pagina.ativa{ display:block; }
+
+  .titulo-secao{
+    text-align:center;
+    margin:40px 0 6px;
+  }
+  .titulo-secao .eyebrow{
+    display:block;
+    font-size:0.72rem;
+    letter-spacing:3px;
+    color:var(--dourado);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .titulo-secao h2{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:1.9rem;
+    color:var(--preto);
+    font-weight:400;
+  }
+  .titulo-secao p{
+    color:var(--texto-suave);
+    font-size:0.9rem;
+    margin-top:8px;
+  }
+
+  /* ===== Destaque ===== */
+  .destaque{
+    background:var(--branco);
+    border:1px solid var(--cinza);
+    border-radius:14px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:1fr;
+    margin-top:8px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.06);
+  }
+  @media(min-width:820px){
+    .destaque{ grid-template-columns:1fr 1fr; }
+  }
+  .destaque-foto{
+    background:var(--cinza-claro);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    position:relative;
+  }
+  .destaque-foto img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    border-radius:10px;
+  }
+  .selo-destaque{
+    position:absolute;
+    top:16px;
+    left:16px;
+    background:var(--preto);
+    color:var(--dourado-claro);
+    font-size:0.68rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border-radius:20px;
+  }
+  .destaque-info{
+    padding:30px 28px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .destaque-info h3{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:1.7rem;
+    color:var(--preto);
+    font-weight:400;
+    margin-bottom:8px;
+  }
+  .destaque-info .sub{
+    font-size:0.8rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--dourado);
+    margin-bottom:14px;
+  }
+  .destaque-info .texto{
+    font-size:0.92rem;
+    color:var(--texto-suave);
+    line-height:1.65;
+    margin-bottom:18px;
+  }
+  .notas{
+    list-style:none;
+    margin:0 0 20px;
+    padding:0;
+    font-size:0.86rem;
+  }
+  .notas li{
+    padding:7px 0;
+    border-bottom:1px solid var(--cinza);
+    display:flex;
+    gap:10px;
+  }
+  .notas li strong{
+    color:var(--preto);
+    min-width:105px;
+    font-weight:600;
+  }
+  .notas li span{ color:var(--texto-suave); }
+  .destaque-preco{
+    font-size:1.7rem;
+    font-weight:700;
+    color:var(--dourado);
+    margin-bottom:16px;
+  }
+  .destaque-info .btn-comprar{ align-self:flex-start; padding:14px 30px; }
+
+  /* ===== Coleção: busca + abas ===== */
+  .colecao-wrap{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:26px;
+    margin-top:24px;
+  }
+  @media(min-width:900px){
+    .colecao-wrap{ grid-template-columns:250px 1fr; align-items:start; }
+  }
+  .sidebar{
+    background:var(--branco);
+    border:1px solid var(--cinza);
+    border-radius:12px;
+    padding:20px 18px;
+  }
+  @media(min-width:900px){
+    .sidebar{ position:sticky; top:70px; }
+  }
+  .sidebar h4{
+    font-size:0.75rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--preto);
+    margin-bottom:12px;
+  }
+  .campo-busca{ position:relative; margin-bottom:22px; }
+  .campo-busca input{
+    width:100%;
+    padding:11px 34px 11px 12px;
+    border:1px solid var(--cinza);
+    border-radius:6px;
+    font-size:0.88rem;
+    background:var(--cinza-claro);
+  }
+  .campo-busca input:focus{ outline:none; border-color:var(--dourado); background:var(--branco); }
+  .campo-busca .lupa{
+    position:absolute;
+    right:11px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--texto-suave);
+    font-size:0.9rem;
+    pointer-events:none;
+  }
+  .filtros-lista{ list-style:none; padding:0; margin:0; }
+  .filtros-lista li{ margin-bottom:4px; }
+  .filtros-lista button{
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:9px 11px;
+    border-radius:6px;
+    font-size:0.86rem;
+    color:var(--texto);
+    cursor:pointer;
+    transition:background .15s,color .15s;
+  }
+  .filtros-lista button:hover{ background:var(--cinza-claro); }
+  .filtros-lista button.ativo{
+    background:var(--preto);
+    color:var(--dourado-claro);
+    font-weight:600;
+  }
+  .abas{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    margin-bottom:18px;
+    border-bottom:1px solid var(--cinza);
+  }
+  .abas button{
+    background:none;
+    border:1px solid var(--cinza);
+    padding:9px 16px;
+    border-radius:20px;
+    font-size:0.8rem;
+    white-space:nowrap;
+    cursor:pointer;
+    color:var(--texto-suave);
+    transition:all .15s;
+  }
+  .abas button:hover{ border-color:var(--dourado); color:var(--preto); }
+  .abas button.ativo{
+    background:var(--preto);
+    border-color:var(--preto);
+    color:var(--dourado-claro);
+    font-weight:600;
+  }
+  .contador-resultados{
+    font-size:0.8rem;
+    color:var(--texto-suave);
+    margin-bottom:14px;
+  }
+  .sem-resultado{
+    text-align:center;
+    padding:50px 20px;
+    color:var(--texto-suave);
+    font-size:0.92rem;
+  }
+
+  /* ===== Páginas internas ===== */
+  .card-pagina{
+    background:var(--branco);
+    border:1px solid var(--cinza);
+    border-radius:12px;
+    padding:32px 28px;
+    max-width:620px;
+    margin:26px auto 0;
+  }
+  .card-pagina h3{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:1.3rem;
+    font-weight:400;
+    margin-bottom:6px;
+    color:var(--preto);
+  }
+  .card-pagina p.intro{
+    font-size:0.9rem;
+    color:var(--texto-suave);
+    margin-bottom:20px;
+    line-height:1.6;
+  }
+  .card-pagina label{
+    display:block;
+    font-size:0.8rem;
+    font-weight:600;
+    margin:12px 0 5px;
+  }
+  .card-pagina input,
+  .card-pagina textarea,
+  .card-pagina select{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid var(--cinza);
+    border-radius:6px;
+    font-size:0.9rem;
+    background:var(--cinza-claro);
+    font-family:inherit;
+  }
+  .card-pagina textarea{ min-height:110px; resize:vertical; }
+  .card-pagina input:focus,
+  .card-pagina textarea:focus,
+  .card-pagina select:focus{ outline:none; border-color:var(--dourado); background:var(--branco); }
+  .info-contato{
+    list-style:none;
+    padding:0;
+    margin:0 0 6px;
+  }
+  .info-contato li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:13px 0;
+    border-bottom:1px solid var(--cinza);
+    font-size:0.9rem;
+  }
+  .info-contato li:last-child{ border-bottom:none; }
+  .info-contato .rotulo{
+    font-weight:600;
+    min-width:92px;
+    color:var(--preto);
+  }
+  .info-contato .valor{ color:var(--texto-suave); }
+
+  /* ===== Rodapé ===== */
+  footer{
+    background:var(--preto);
+    color:#cfcfcf;
+    padding:46px 20px 26px;
+    text-align:center;
+    border-top:3px solid var(--dourado);
+  }
+  .footer-marca{
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:1.35rem;
+    letter-spacing:4px;
+    color:var(--dourado-claro);
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .footer-slogan{
+    font-size:0.88rem;
+    color:#b8b8b8;
+    max-width:420px;
+    margin:0 auto 26px;
+    line-height:1.6;
+  }
+  .footer-contato-titulo{
+    font-size:0.72rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--dourado);
+    margin-bottom:14px;
+  }
+  .btn-wpp-footer{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--whatsapp);
+    color:#fff;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:30px;
+    font-size:0.92rem;
+    font-weight:600;
+    transition:background .2s, transform .2s;
+  }
+  .btn-wpp-footer:hover{ background:var(--whatsapp-hover); transform:translateY(-2px); }
+  .btn-wpp-footer svg{ width:22px; height:22px; fill:#fff; flex-shrink:0; }
+  .footer-linha{
+    margin-top:30px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:0.76rem;
+    color:#8f8f8f;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="data:image/png;base64,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" alt="Aura Fragrâncias"><!--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" alt="Aura Fragrâncias"><!--ZAAAXcklEQVR42u3d/U0byxrH8Wcvp46INIBlGshJAZaRG7hJA0a4gCPdU4ARbiAnDVi2XAA5DYBMA6D0Yfb+4Rl4GGZmZ/bF2PD9SFFCwPbu2sxvn915KR4fHwUAgPfmPxwCAAABBwAAAQcAAAEHAAABBwAAAQcAIOAAACDgAAAg4AAAIOAAACDgAAAg4AAABBwAAAQcAAAEHAAABBwAAAQcAAAEHACAgAMAgIADAICAAwCAgAMAgIADAABgAAOAA9M4kkkVvR/QAAAAAElFTkSuQmCC" alt="Aura Fragrâncias"><!--Y338e8lXpIniyEYyIRhGXYiJIIZEGSAGMIDRBgIg0RWyYxPAFkUWUQJi4Z9F5BNFBCCIAjBsIpAQIMCIghhFcKQYBgSnkiERCAmNX+c37FPKqe6qnq7t28+79frvk53dVV1VXXf/tXZO5IkEQAAaG+rcAkAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAABBQAcAAAR0AABAQAcAAAR0AABAQAcAgIAOAACIf3vt3TQAAgQEdAAAQEAHAAAEdAAAQEAHAAAEdAAACOgAAICADgAACOgAAICADgAAAR0AABDQAQAAAR0AABDQAQAgoAMAAAI6AAAgoAMAAAI6AAAgoAMAQEAHAAAEdAAAQEAHAAAEdAAACOgAABDQAQAAAR0AABDQAQAAAR0AAAI6AAAgoAMAAAI6AAAgoAMAAAI6AAAENABAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAAAIAjoAACCgAwAAAjoAACCgAwBAQAcAAAR0AABAQAcAAAR0AAAI6AAAENABAAABHQAAENABAAABHQAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAABBQAcAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAABBQAcAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAABBQAcAAAR0AABAQAcAAAR0AABAQAcAAAR0AABAQAcAAAR0AAAI6AAAgIAOAAAI6AAAgIAOAAAI6AAAENABAAABHQAAENABAAABHQAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAABBQAcAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAAABAAcAAP//8vYbBu1lQIkAAAAASUVORK5CYII=" alt="Aura Fragrâncias"><!--XAAALMElEQVR42u2dd5BW1RmHn5ddytLLUiKrYiMgFtSAWAgoIkrUWKICQaNO7HESjTGDOjGY6JhE0ywJmGQSW6LGUdTRgCAQDWJNRGlqBAGxgAgqbYH95Y/z3vHm89sii+y6vs+Ms3zn3ntu+X7fe85bzhWCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAgaK9aUbkZSG6AMqAQ+MrOqevZnQHMzqwyphABrE8tJwL7AUqCrC/FWM1uylf0NAQ4E1gFTzOyVkEsIsDqxHA/s7B//BTwP3AnMNbNrtqK/Q13MfwL2BI4CmgObgUfN7PmQzrahtAmIryXQ2y3VfUAb4CCgL7BRUhszW1uHoXY40Ae4A9gV+B1wKlAO/M13rQJOktTdzB4J+dSfZk3gHloBFcAS4MvAV4BjgWnAM8CQOo4Ei4FVQD9gMjAa2AJMBAYAw4C9gV8Ce0rqHvIJAWJma4CdgIuAUT5kdgBuAm4DRkgqq4OIv+TW7jXgGGCTmd0DtAVmmtlEn1f2AZ4FBoV8YghG0kCguzsfjwNHumAWS+oIbDSz9fnh1szkw26Fz/X6+eY3XcRPmNlzLvD3cqf7L9AD2NgUnl0IcNvQ3IfKPYD+PmT2lTTYhbmpYP+rJa0Aprg1KwVeB951AS4DDpB0KvCCmb3qwm0GDAVu9yF+csjnCz4Ee9yvA/CRz8/aAe+4t3q8C/OG3P5tfS43yp2VJ4C3gJZAZ+AN4GSgBPhnOkT9JR0DXObbBwGLzGxpyOcLHIaR1Bw43y3cIcARwCwzO1HS0cAyM3up4JhjXWztgOFmNsbbOwNnevimi5ndJ2m4OzVLgbXAq25lV5jZiyGdGIKbefilElgELADu9W2bgU5FjhnuVqwN0F5SKzPb4CJ+CGgNdJbUHtgBeNBDOrPMbIUfG4QAAehFiv0tcQFtAF6SdHEmQEkvmdn7uWPmuWj/4mLr7qLq4d5vmc/v5rj4xgD3A10kdfIRY5WLsdAiZ/HITT6EL/DpQTYPLfN282t93cw2foqpRjczWxRzwMbDjqSU25vASOADYD4pgPyGf9lnSWqXO+YV4BH/+wHwjqQWpKzJIR6w/jvwbRdxqTsng4AXve+yGqYzg31eOcA/twR+SopHngAcDhwHfBeYLOncOt7rCOD3YS8b1xywl6QbJV0u6TpJl3hoBUkm6VJJx0n6iaRu3r6TpNP8v/7eNlSJP+RDO5IuknSWpH28vzcl/ay2eamk291jztrOkPSez1nz+w6TtFbSVXW410mSqiT1CQvYWLwns8XAVX4P+5MCyWW+TcA/gJ7ABOBcHyJ7kdJpXc3sPznrchspxdbNj3/Gh/eNwAHe34d1eF4lflzhflVAi4Lrnwb8GhgnaYcaxNfXrfVbwNkhwMY3hy0B5vo8q7ekUyR1MbOXSTHClqTY3kGkoPMqD9UgqcJFe4X/PT3X9zsu6o5u0ZrXI7Jg1bQ/7de3Tw39fYMU2/wzcJoH10OAjYRjSNUvD7pYDvBQytk+HN8FjCXF+MqB5UA3dzIgVbnMMrNlpEKGc9xSZs9mjQtRLiBt7YyhmvYy37asBuejJzDbrXQXd5JCgI1gDljuQ+o0F954F+ES4GVgrJmtBGa4hdmNlKrrAbzic7KD/XhIueM9gMMllQL7uSMyy8W3hfrFTYuJcKw7NwurOWYoMN/MNpnZQr/W70gqCQE2PIN86G0HlPuccA4wxMweBrpKGmxmM4HnPFbYAVjt4Y+BwJJcrnc2MJ2UKRnnnx/zfkvrKT7LP2tJ5ZLGu+DPNLNNRX5g5vPTfNnXzX7dA0OADc9S/yJaA5M8/jeXjwsLbgKOkLSPmd3olS0jgSd9+9dJweeM1qQ8bwfgaTOb7EPzJwT0KakiBb6vkXSzpEku9HXA4JwzVMiuQLMsF+08RIpXntNUBPi5DUSb2YuSbgXOc1E9SSog3V1SiZlVSvoNcIWk+0n1fm3NbK6kndwrXShpmHvR5aRAdTsffqcUcSy0lT/ytR4PXE8q83+IVKWzohbnY5WkQbnzV5FiiidLGmdmb4cAG1aECyRdRyog6EcKGnczsy2+fZWkGT6UtQN+W2BBx7sD8BjwspltljQA+IGkibksSqWLpy7zvOqG6rUe6J4q6QbgF5KmmNm8IsNvK1JlzxxS8DrPq/69jQWuJ2g0Tkk3SXd4fWC+fYQHoC3X9j1JVxRkSbJtfTzoe05B+2xJD9RyDRWS/lhwrjMkrXCPNmvrIGmRpKn5oHVu+zBJ42o4zz2SXnOhxhywkdADeMaDyHnaAxUeTMYzILuZ2TVm9mExq0qq9bvQveGMh4EjPXZYHcOBedm5CiyjcudYA1zsDs/pRfo5jprrDSe4V39YmJ7GYf1aSrrWQzOF206XNDL3+ceSDqmlv695eu6oAs/1dUlPVHOeoZIeldS1oH2spNWF1tbTe3dL+kDSbrn2XpLureX6SiT9W9KU+PYbhwBHSBpVzbbRkg7zL/xoSW9LusCLEIrtb5JOcAEulDQgl2PuJ2mGt//c+zlf0gRJUyTtXdBXVxelip3Tpw2PS5rv11bhopzvjlJ199vFj5Ok70tq/bmdxzcRAV4K3GVmy4tsG+mhi9dIhattSGm7p8xsXTXxt4E+dJeSUnfPZm9Z8DnbEB8+ewIrSdXT0wr7k9STVKm9xYfgpwqXiHpA/Ks+HVoG7OL7v+HTgWL329OdLpFSkbPNbHWYooYT4MTqcqRuAXvEUwon5LPk/RqseX+2Podbnx9Ff0nfagqe6mdJU1laOJ/0ao73i2x7F/jQ86eHktYAV/Jxjnew/11pZi/kBLQ7KXb3Vq6tLyl9ttqH002S9iIFsY2UQcmG4W6kaugOwAb3qHub2Twf5nclLW6q8mrrgT70PmtmayTtDCzP0nSS9gUWZFXU7gjtRyoZe6pYOi8s4PYV4L5FrFCnFPWwdaQF5ue7+CrdKu4OnEIqOjhV0ojcvOxaUk446+sw4EJSNmJ/UiEEHk5p74Ian4vrlZOqbbI3a7UG7pY0wsM05wItXEjX+/693GIDXECq4sHFeAtp4VUWqL6alM3p6D+qsIANyBxS3rcky4I4nYEsXbXFnY9y4D1P1ZWQFpvPIC1i2sX3HQrMJC1Q6mtm80nrQ640s6yMP/M8N5DelLA5cybcK+0P/MoFPsGf9QvAKEkr/Vo2uUgfN7M7a3AQTwSu9Huc6j+ClR4LnFksnhkWcHu68unNBytJ60Ty7OleLO4tNnerkdX8ZUs6L3eh3O7tY9w67gF809vW+7CKC210zrKdAdwN/NXMNrul6u1D5Bhfj7zFr3G8W7edc/22z8f4/J+bgS1uxY/3IXo/UgFDJakafDpwnqShYQEbnsWkV20sLri/Obl/Ly+wNM1JRQw3uAj7SNpIWtR0s1uhyz37cSspR/y0D/eTcg7QLd7PgZKme5jmEtKC+SWkzMYDQKm/MuRO4IduAB4BfiTpMr/GWW6R17l1He39T/dzjpE0k1Sev96Fup6gwUMxLd3S5Ns6ZhbFswc7FGwvyy1Yaiuphx/TIbdP1+yzpE6SjpTUO7e9e+4cu0hqIWnHfJxPUk9JzfLn98xKFuBuJulgSfvn+urqQfGKfAGqX6P5dQ6pKWAdBEEQBEEQBEEQBEEQBEEQBEEQbAuKre6rC83i0QXbQHxlpPfshACD7S6+VqTqoEH+Ms+SEGCwPcU3lFT7WEV6i8Ne+YX5tWHxGIN6irAlqfysHzCV9H8orYonE2zXOaC/RCkIGkyEMZoGQRAEQRAEQRAEQRAEQRAEQRD8H/8DYp3o8tX+d3QAAAAASUVORK5CYII=" alt="Aura Fragrâncias"><!--OLDiVBORw0KGgoAAAANSUhEUgAAAfQAAAERCAYAAACNX1W7AAAl0ElEQVR42u3debwcVZ338e8lXpIniyEYyIRhGXYiJIIZEGSAGMIDRBgIg0RWyYxPAFkUWUQJi4Z9F5BNFBCCIAjBsIpAQIMCIghhFcKQYBgSnkiERCAmNX+c37FPKqe6qnq7t28+79frvk53dVV1VXXf/tXZO5IkEQAAaG+rcAkAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAABBQAcAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAENABAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAABBQAcAAAR0AABAQAcAAAR0AAAI6AAAgIAOAAAI6AAAECOgAwBAQAcAAAR0AABAQAcAAAR0AAAI6AAAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAENABAAABHQAAAjoAACCgAwAAAjoAACCgAwBAQAcAAAR0AABAQAcAAAR0AAAI6AAAgIAOAAAI6AAAgIAOAAAIAjoAACCgAwAAAjoAACCgAwBAQAcAAAR0AABAQAcAAAR0AAAI6AAAENABAAABHQAAENABAAABHQAAAjoAAAR0AABAQAcAAAR0AABAQAcAgIAOAAAI6AAAgIAOAAAI6AAAgIAOAAABHQAAENABAAABHQAAEND/-->
+
+  <h1 class="visualmente-oculto">Aura Fragrâncias</h1>
+  <div class="banner-entrega">
+    <span>🛵 Entrega local em Natal e Nova Parnamirim</span>
+    <span>📦 Enviamos para todo o Brasil</span>
+  </div>
+</header>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="#" class="link-nav ativo" data-pagina="inicio">Início</a></li>
+    <li><a href="#" class="link-nav" data-pagina="contato">Contato</a></li>
+    <li><a href="#" class="link-nav" data-pagina="cliente">Área do Cliente</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ============ PÁGINA: INÍCIO ============ -->
+  <section class="pagina ativa" id="pagina-inicio">
+
+    <div class="destaque" id="destaqueBox"></div>
+
+    <div class="titulo-secao">
+      <span class="eyebrow">Nossa Seleção</span>
+      <h2>Coleção</h2>
+      <p>Encontre a fragrância certa para o seu momento.</p>
+    </div>
+
+    <div class="colecao-wrap">
+
+      <aside class="sidebar">
+        <h4>Buscar perfume</h4>
+        <div class="campo-busca">
+          <input type="text" id="campoBusca" placeholder="Ex.: Pêra e Frésia" autocomplete="off">
+          <span class="lupa">⌕</span>
+        </div>
+
+        <h4>Categorias</h4>
+        <ul class="filtros-lista" id="filtrosLaterais">
+          <li><button type="button" class="ativo" data-cat="todos">Coleção Completa</button></li>
+          <li><button type="button" data-cat="novidades">Novidades</button></li>
+          <li><button type="button" data-cat="vendidos">Mais Vendidos</button></li>
+          <li><button type="button" data-cat="menor">Menor Preço</button></li>
+          <li><button type="button" data-cat="maior">Maior Preço</button></li>
+        </ul>
+      </aside>
+
+      <div>
+        <div class="abas" id="abasCategorias">
+          <button type="button" class="ativo" data-cat="todos">Coleção Completa</button>
+          <button type="button" data-cat="novidades">Novidades</button>
+          <button type="button" data-cat="vendidos">Mais Vendidos</button>
+          <button type="button" data-cat="menor">Menor Preço</button>
+          <button type="button" data-cat="maior">Maior Preço</button>
+        </div>
+
+        <p class="contador-resultados" id="contadorResultados"></p>
+        <div class="grid" id="grid-produtos"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PÁGINA: CONTATO ============ -->
+  <section class="pagina" id="pagina-contato">
+    <div class="titulo-secao">
+      <span class="eyebrow">Fale Conosco</span>
+      <h2>Contato</h2>
+      <p>Estamos à disposição para tirar dúvidas sobre fragrâncias, prazos e entregas.</p>
+    </div>
+
+    <div class="card-pagina">
+      <h3>Canais de atendimento</h3>
+      <p class="intro">O WhatsApp é o nosso canal principal — respondemos rapidinho por lá.</p>
+
+      <ul class="info-contato">
+        <li><span class="rotulo">WhatsApp</span><span class="valor">Atendimento e pedidos, todos os dias</span></li>
+        <li><span class="rotulo">Entrega</span><span class="valor">Natal e Nova Parnamirim (motoboy) · Correios para todo o Brasil</span></li>
+        <li><span class="rotulo">Pagamento</span><span class="valor">Pix (chave enviada na confirmação do pedido)</span></li>
+        <li><span class="rotulo">Horário</span><span class="valor">Segunda a sábado, das 8h às 20h</span></li>
+      </ul>
+
+      <a class="btn-wpp-footer" style="margin-top:20px;" href="#" id="wppContato" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.75 0-3.47-.47-4.97-1.36l-.36-.21-3.7.97.99-3.6-.23-.37a9.75 9.75 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.81-9.8 2.62 0 5.08 1.02 6.93 2.88a9.72 9.72 0 0 1 2.87 6.93c0 5.41-4.4 9.81-9.82 9.81M20.5 3.49A11.78 11.78 0 0 0 12.05 0C5.5 0 .18 5.33.17 11.88c0 2.09.55 4.14 1.59 5.94L.07 24l6.33-1.66a11.9 11.9 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.16-3.48-8.4"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ PÁGINA: ÁREA DO CLIENTE ============ -->
+  <section class="pagina" id="pagina-cliente">
+    <div class="titulo-secao">
+      <span class="eyebrow">Meus Pedidos</span>
+      <h2>Área do Cliente</h2>
+      <p>Consulte o andamento do seu pedido direto com a nossa equipe.</p>
+    </div>
+
+    <div class="card-pagina">
+      <h3>Consultar meu pedido</h3>
+      <p class="intro">Preencha os dados abaixo e nós abriremos o WhatsApp com a sua consulta já escrita. Nossa equipe responde com o status atualizado.</p>
+
+      <form id="formCliente">
+        <label for="clienteNome">Nome completo *</label>
+        <input type="text" id="clienteNome" required>
+
+        <label for="clienteAssunto">O que você precisa? *</label>
+        <select id="clienteAssunto" required>
+          <option value="Status do meu pedido">Status do meu pedido</option>
+          <option value="Código de rastreio">Código de rastreio</option>
+          <option value="Alterar endereço de entrega">Alterar endereço de entrega</option>
+          <option value="Segunda via da chave Pix">Segunda via da chave Pix</option>
+          <option value="Troca ou devolução">Troca ou devolução</option>
+        </select>
+
+        <label for="clienteDetalhe">Detalhes (opcional)</label>
+        <textarea id="clienteDetalhe" placeholder="Ex.: fiz o pedido do Miss Blue na terça-feira..."></textarea>
+
+        <button type="submit" class="btn-whatsapp">Consultar no WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-marca">Aura Perfumes</div>
+  <p class="footer-slogan">Fragrâncias inspiradas em grifes internacionais.</p>
+
+  <div class="footer-contato-titulo">Contato</div>
+  <a class="btn-wpp-footer" href="#" id="wppRodape" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.75 0-3.47-.47-4.97-1.36l-.36-.21-3.7.97.99-3.6-.23-.37a9.75 9.75 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.81-9.8 2.62 0 5.08 1.02 6.93 2.88a9.72 9.72 0 0 1 2.87 6.93c0 5.41-4.4 9.81-9.82 9.81M20.5 3.49A11.78 11.78 0 0 0 12.05 0C5.5 0 .18 5.33.17 11.88c0 2.09.55 4.14 1.59 5.94L.07 24l6.33-1.66a11.9 11.9 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.16-3.48-8.4"/></svg>
+    Falar no WhatsApp
+  </a>
+
+  <div class="footer-linha">
+    &copy; 2026 Aura Fragrâncias. Todos os direitos reservados.
+  </div>
+</footer>
+
+<!-- Modal de checkout -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="fechar-modal" id="fecharModal" aria-label="Fechar">&times;</button>
+    <h3>Finalizar Pedido</h3>
+    <div class="resumo-produto">
+      <span class="nome" id="resumoNome"></span>
+      <span class="valor" id="resumoPreco"></span>
+    </div>
+
+    <form id="formEntrega">
+      <label for="nome">Nome Completo *</label>
+      <input type="text" id="nome" required>
+
+      <div class="linha-dupla">
+        <div>
+          <label for="cep">CEP *</label>
+          <input type="text" id="cep" placeholder="00000-000" required>
+        </div>
+        <div>
+          <label for="numero">Número *</label>
+          <input type="text" id="numero" required>
+        </div>
+      </div>
+
+      <label for="endereco">Endereço (Rua/Avenida) *</label>
+      <input type="text" id="endereco" required>
+
+      <label for="bairro">Bairro *</label>
+      <input type="text" id="bairro" required>
+
+      <label for="complemento">Complemento (opcional)</label>
+      <input type="text" id="complemento">
+
+      <div class="frete-box">
+        <h4>Calcular frete</h4>
+        <div class="frete-linha">
+          <input type="text" id="cepFrete" placeholder="Digite o CEP para calcular">
+          <button type="button" class="btn-frete" id="btnCalcularFrete">Calcular</button>
+        </div>
+        <div class="frete-resultado" id="freteResultado"></div>
+      </div>
+
+      <div class="total-pedido">
+        <span>Total do pedido</span>
+        <span class="valor-total" id="valorTotal"></span>
+      </div>
+
+      <button type="submit" class="btn-whatsapp">Finalizar Pedido no WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Catálogo completo (baseado em lista.mercadolivre.com.br/loja/mr-parfum)
+  // Para alterar preços, disponibilidade ou adicionar/remover produtos, edite este array.
+  const produtos = [
+    {
+      nome: "Pêra e Frésia 150ml",
+      preco: 225.00,
+      precoOriginal: null,
+      disponivel: true,
+      novidade: false,
+      maisVendido: true,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_844919-MLA94645368550_102025-E.webp",
+      desc: "Fragrância assinatura da casa, notas frutadas e florais."
+    },
+    {
+      nome: "Rosa e Jasmim 150ml",
+      preco: 211.85,
+      precoOriginal: 229.90,
+      disponivel: true,
+      novidade: false,
+      maisVendido: true,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_813146-MLB96066120161_102025-E--perfume-rosa-e-jasmim-150ml-mr-parfum.webp",
+      desc: "Floral delicado com toque fresco e romântico."
+    },
+    {
+      nome: "Miss Blue 150ml",
+      preco: 239.90,
+      precoOriginal: null,
+      disponivel: true,
+      novidade: true,
+      maisVendido: false,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_778046-MLA111955482565_052026-E.webp",
+      desc: "Floral frutal, leve e envolvente."
+    },
+    {
+      nome: "Je T'aime 150ml",
+      preco: 239.90,
+      precoOriginal: null,
+      disponivel: true,
+      novidade: true,
+      maisVendido: false,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_969404-MLB99262886328_112025-E--perfume-150ml-je-taime--floral-frutal.webp",
+      desc: "Floral frutal, doce e marcante."
+    },
+    {
+      nome: "Diva 150ml",
+      preco: 239.90,
+      precoOriginal: null,
+      disponivel: true,
+      novidade: false,
+      maisVendido: true,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_604686-MLA108537232179_032026-E.webp",
+      desc: "Floral amadeirado, elegante e sofisticado."
+    },
+    {
+      nome: "Love Rose 150ml",
+      preco: 243.69,
+      precoOriginal: null,
+      disponivel: true,
+      novidade: false,
+      maisVendido: true,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_791079-MLA111956281135_052026-E.webp",
+      desc: "Floral romântico, notas de rosa em destaque."
+    },
+    {
+      nome: "Femme Fatale 150ml",
+      preco: 243.69,
+      precoOriginal: null,
+      disponivel: true,
+      novidade: false,
+      maisVendido: false,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_952701-MLA110983874810_052026-E.webp",
+      desc: "Oriental floral, intenso e sedutor."
+    },
+    {
+      nome: "Mister Bleu 150ml (Masculino)",
+      preco: 227.90,
+      precoOriginal: 239.90,
+      disponivel: true,
+      novidade: true,
+      maisVendido: false,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_744868-MLA96187903200_102025-E.webp",
+      desc: "Amadeirado especiado, marcante e moderno."
+    },
+    {
+      nome: "Indomable 150ml (Masculino)",
+      preco: 227.90,
+      precoOriginal: 239.90,
+      disponivel: true,
+      novidade: false,
+      maisVendido: true,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_965178-MLA96995644620_112025-E.webp",
+      desc: "Aromático amadeirado, forte personalidade."
+    },
+    {
+      nome: "Rosa e Lichia Extrait de Parfum 50ml",
+      preco: 258.70,
+      precoOriginal: null,
+      disponivel: true,
+      novidade: true,
+      maisVendido: true,
+      img: "https://http2.mlstatic.com/D_Q_NP_2X_962678-MLA98422223078_112025-E.webp",
+      desc: "Edição exclusiva, alta concentração e fixação."
+    }
+  ];
+
+  // ===== Produto em DESTAQUE na página inicial =====
+  // Troque "nome" para destacar outro perfume (precisa ser igual ao nome no array acima).
+  const DESTAQUE = {
+    nome: "Rosa e Lichia Extrait de Parfum 50ml",
+    selo: "Fragrância em Destaque",
+    subtitulo: "Extrait de Parfum · 50ml",
+    texto: "Nossa fragrância mais concentrada. A rosa aveludada encontra a doçura suculenta da lichia sobre um fundo de âmbar e almíscar branco — resultado é um rastro sofisticado que acompanha você o dia inteiro.",
+    notas: [
+      { titulo: "Saída",       valor: "Lichia, bergamota e pêra" },
+      { titulo: "Corpo",       valor: "Rosa búlgara, peônia e violeta" },
+      { titulo: "Fundo",       valor: "Âmbar, almíscar branco e cedro" },
+      { titulo: "Fixação",     valor: "Alta — 8 a 12 horas" },
+      { titulo: "Ocasião",     valor: "Noite, eventos e uso especial" }
+    ]
+  };
+
+  // Tabela de frete (estimativa simplificada por região).
+  // Natal e Nova Parnamirim: entrega local (motoboy). Demais localidades: envio via Correios.
+  const FRETE_LOCAL = 15.00;
+  const FRETE_POR_REGIAO = {
+    RN: 25.00,               // demais cidades do Rio Grande do Norte
+    Nordeste: 30.00,
+    "Sudeste/Sul": 38.00,
+    "Norte/Centro-Oeste": 45.00
+  };
+  const UF_REGIAO = {
+    RN:"RN", AL:"Nordeste", BA:"Nordeste", CE:"Nordeste", MA:"Nordeste", PB:"Nordeste",
+    PE:"Nordeste", PI:"Nordeste", SE:"Nordeste",
+    SP:"Sudeste/Sul", RJ:"Sudeste/Sul", MG:"Sudeste/Sul", ES:"Sudeste/Sul",
+    PR:"Sudeste/Sul", SC:"Sudeste/Sul", RS:"Sudeste/Sul",
+    AC:"Norte/Centro-Oeste", AP:"Norte/Centro-Oeste", AM:"Norte/Centro-Oeste", DF:"Norte/Centro-Oeste",
+    GO:"Norte/Centro-Oeste", MT:"Norte/Centro-Oeste", MS:"Norte/Centro-Oeste", PA:"Norte/Centro-Oeste",
+    RO:"Norte/Centro-Oeste", RR:"Norte/Centro-Oeste", TO:"Norte/Centro-Oeste"
+  };
+
+  // Número de WhatsApp da vendedora — usado apenas para montar o link de envio,
+  // não é exibido em nenhum lugar da página.
+  const NUMERO_WHATSAPP = "5584999419888";
+
+  const grid = document.getElementById("grid-produtos");
+  const overlay = document.getElementById("overlay");
+  const resumoNome = document.getElementById("resumoNome");
+  const resumoPreco = document.getElementById("resumoPreco");
+  const formEntrega = document.getElementById("formEntrega");
+  const fecharModalBtn = document.getElementById("fecharModal");
+  const cepFreteInput = document.getElementById("cepFrete");
+  const btnCalcularFrete = document.getElementById("btnCalcularFrete");
+  const freteResultado = document.getElementById("freteResultado");
+  const valorTotalEl = document.getElementById("valorTotal");
+  const cepEntregaInput = document.getElementById("cep");
+  const destaqueBox = document.getElementById("destaqueBox");
+  const campoBusca = document.getElementById("campoBusca");
+  const abasCategorias = document.getElementById("abasCategorias");
+  const filtrosLaterais = document.getElementById("filtrosLaterais");
+  const contadorResultados = document.getElementById("contadorResultados");
+
+  let produtoSelecionado = null;
+  let freteAtual = { valor: 0, descricao: "", calculado: false };
+  let categoriaAtual = "todos";
+  let termoBusca = "";
+
+  function formatarPreco(valor){
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  }
+
+  function atualizarTotal(){
+    if(!produtoSelecionado) return;
+    const total = produtoSelecionado.preco + (freteAtual.calculado ? freteAtual.valor : 0);
+    valorTotalEl.textContent = formatarPreco(total);
+  }
+
+  async function calcularFrete(cepBruto){
+    const cep = cepBruto.replace(/\D/g, "");
+    if(cep.length !== 8){
+      freteResultado.classList.add("erro");
+      freteResultado.textContent = "Digite um CEP válido (8 dígitos).";
+      return;
+    }
+
+    freteResultado.classList.remove("erro");
+    freteResultado.textContent = "Calculando frete...";
+
+    try{
+      const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const dados = await resposta.json();
+
+      if(dados.erro){
+        throw new Error("CEP não encontrado");
+      }
+
+      const cidade = (dados.localidade || "").toLowerCase();
+      const uf = dados.uf;
+      const ehLocal = uf === "RN" && (cidade.includes("natal") || cidade.includes("parnamirim"));
+
+      if(ehLocal){
+        freteAtual = {
+          valor: FRETE_LOCAL,
+          descricao: `Entrega local (motoboy) em ${dados.localidade}/${uf}`,
+          calculado: true
+        };
+      } else {
+        const regiao = UF_REGIAO[uf] || "Norte/Centro-Oeste";
+        const valor = FRETE_POR_REGIAO[regiao];
+        freteAtual = {
+          valor: valor,
+          descricao: `Envio via Correios para ${dados.localidade}/${uf}`,
+          calculado: true
+        };
+      }
+
+      freteResultado.innerHTML = `${freteAtual.descricao}<br>Frete: <strong>${formatarPreco(freteAtual.valor)}</strong>`;
+      cepEntregaInput.value = dados.cep || cepEntregaInput.value;
+      atualizarTotal();
+    } catch(erro){
+      freteAtual = { valor: 0, descricao: "", calculado: false };
+      freteResultado.classList.add("erro");
+      freteResultado.textContent = "Não foi possível calcular o frete para esse CEP. Verifique e tente novamente.";
+      atualizarTotal();
+    }
+  }
+
+  btnCalcularFrete.addEventListener("click", () => {
+    calcularFrete(cepFreteInput.value);
+  });
+
+  // Remove acentos para a busca funcionar com ou sem acentuação
+  function normalizar(texto){
+    return texto.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+
+  function filtrarProdutos(){
+    let lista = produtos.map((p, i) => ({ ...p, indiceOriginal: i }));
+
+    if(termoBusca){
+      const alvo = normalizar(termoBusca);
+      lista = lista.filter(p => normalizar(p.nome + " " + p.desc).includes(alvo));
+    }
+
+    if(categoriaAtual === "novidades"){
+      lista = lista.filter(p => p.novidade);
+    } else if(categoriaAtual === "vendidos"){
+      lista = lista.filter(p => p.maisVendido);
+    } else if(categoriaAtual === "menor"){
+      lista.sort((a, b) => a.preco - b.preco);
+    } else if(categoriaAtual === "maior"){
+      lista.sort((a, b) => b.preco - a.preco);
+    }
+
+    return lista;
+  }
+
+  function montarCard(produto){
+    const indisponivel = produto.disponivel === false;
+    const badge = produto.precoOriginal
+      ? `<span class="badge-off">-${Math.round((1 - produto.preco / produto.precoOriginal) * 100)}% OFF</span>`
+      : "";
+    const precoHtml = produto.precoOriginal
+      ? `<span class="preco-original">${formatarPreco(produto.precoOriginal)}</span>${formatarPreco(produto.preco)}`
+      : formatarPreco(produto.preco);
+
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      ${badge}
+      <img src="${produto.img}" alt="${produto.nome}" style="${indisponivel ? "filter:grayscale(1);opacity:0.6;" : ""}">
+      <div class="card-body">
+        <h2>${produto.nome}</h2>
+        <p class="desc">${produto.desc}</p>
+        <p class="preco">${precoHtml}</p>
+        ${
+          indisponivel
+            ? `<button class="btn-comprar" disabled style="background:var(--cinza);color:var(--texto-suave);cursor:not-allowed;">Indisponível</button>`
+            : `<button class="btn-comprar" data-index="${produto.indiceOriginal}">Comprar Agora</button>`
+        }
+      </div>
+    `;
+    return card;
+  }
+
+  function renderizarProdutos(){
+    const lista = filtrarProdutos();
+    grid.innerHTML = "";
+
+    if(lista.length === 0){
+      contadorResultados.textContent = "";
+      grid.innerHTML = `<p class="sem-resultado" style="grid-column:1/-1;">
+        Nenhum perfume encontrado para “${termoBusca}”.<br>Tente outro nome ou volte para a coleção completa.
+      </p>`;
+      return;
+    }
+
+    contadorResultados.textContent =
+      lista.length === 1 ? "1 perfume encontrado" : `${lista.length} perfumes encontrados`;
+
+    lista.forEach(produto => grid.appendChild(montarCard(produto)));
+  }
+
+  function renderizarDestaque(){
+    const produto = produtos.find(p => p.nome === DESTAQUE.nome);
+    if(!produto || !destaqueBox) return;
+
+    const indice = produtos.indexOf(produto);
+    const notasHtml = DESTAQUE.notas
+      .map(n => `<li><strong>${n.titulo}</strong><span>${n.valor}</span></li>`)
+      .join("");
+
+    destaqueBox.innerHTML = `
+      <div class="destaque-foto">
+        <span class="selo-destaque">${DESTAQUE.selo}</span>
+        <img src="${produto.img}" alt="${produto.nome}">
+      </div>
+      <div class="destaque-info">
+        <span class="sub">${DESTAQUE.subtitulo}</span>
+        <h3>${produto.nome.replace(/ (Extrait de Parfum )?\d+ml.*/i, "")}</h3>
+        <p class="texto">${DESTAQUE.texto}</p>
+        <ul class="notas">${notasHtml}</ul>
+        <p class="destaque-preco">${formatarPreco(produto.preco)}</p>
+        <button class="btn-comprar" data-index="${indice}">Comprar Agora</button>
+      </div>
+    `;
+  }
+
+  // ===== Navegação entre páginas =====
+  function irParaPagina(nome){
+    document.querySelectorAll(".pagina").forEach(secao => {
+      secao.classList.toggle("ativa", secao.id === "pagina-" + nome);
+    });
+    document.querySelectorAll(".link-nav").forEach(link => {
+      link.classList.toggle("ativo", link.dataset.pagina === nome);
+    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  document.querySelectorAll(".link-nav").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      irParaPagina(link.dataset.pagina);
+    });
+  });
+
+  // ===== Busca e categorias =====
+  function selecionarCategoria(cat){
+    categoriaAtual = cat;
+    abasCategorias.querySelectorAll("button").forEach(b => {
+      b.classList.toggle("ativo", b.dataset.cat === cat);
+    });
+    filtrosLaterais.querySelectorAll("button").forEach(b => {
+      b.classList.toggle("ativo", b.dataset.cat === cat);
+    });
+    renderizarProdutos();
+  }
+
+  campoBusca.addEventListener("input", () => {
+    termoBusca = campoBusca.value.trim();
+    renderizarProdutos();
+  });
+
+  [abasCategorias, filtrosLaterais].forEach(container => {
+    container.addEventListener("click", e => {
+      const botao = e.target.closest("button[data-cat]");
+      if(botao) selecionarCategoria(botao.dataset.cat);
+    });
+  });
+
+  // ===== Links de WhatsApp (contato e rodapé) =====
+  const MSG_CONTATO = encodeURIComponent("Olá! Vim pelo site da Aura Fragrâncias e gostaria de mais informações.");
+  ["wppContato", "wppRodape"].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.href = `https://wa.me/${NUMERO_WHATSAPP}?text=${MSG_CONTATO}`;
+  });
+
+  // ===== Formulário da Área do Cliente =====
+  const formCliente = document.getElementById("formCliente");
+  if(formCliente){
+    formCliente.addEventListener("submit", e => {
+      e.preventDefault();
+      const nome = document.getElementById("clienteNome").value.trim();
+      const assunto = document.getElementById("clienteAssunto").value;
+      const detalhe = document.getElementById("clienteDetalhe").value.trim();
+
+      let msg = `*Área do Cliente - Aura Fragrâncias*\n\n`;
+      msg += `Nome: ${nome}\n`;
+      msg += `Assunto: ${assunto}\n`;
+      if(detalhe) msg += `Detalhes: ${detalhe}\n`;
+      msg += `\nPoderia me ajudar, por favor?`;
+
+      window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
+      formCliente.reset();
+    });
+  }
+
+  function abrirModal(produto){
+    produtoSelecionado = produto;
+    resumoNome.textContent = produto.nome;
+    resumoPreco.textContent = formatarPreco(produto.preco);
+    freteAtual = { valor: 0, descricao: "", calculado: false };
+    freteResultado.classList.remove("erro");
+    freteResultado.textContent = "";
+    atualizarTotal();
+    overlay.classList.add("ativo");
+    document.body.style.overflow = "hidden";
+  }
+
+  function fecharModal(){
+    overlay.classList.remove("ativo");
+    document.body.style.overflow = "";
+    formEntrega.reset();
+    produtoSelecionado = null;
+    freteAtual = { valor: 0, descricao: "", calculado: false };
+    freteResultado.textContent = "";
+  }
+
+  // Botões "Comprar Agora" — na grade e no bloco de destaque
+  [grid, destaqueBox].forEach(container => {
+    if(!container) return;
+    container.addEventListener("click", (e) => {
+      if(e.target.classList.contains("btn-comprar") && !e.target.disabled){
+        const index = e.target.getAttribute("data-index");
+        abrirModal(produtos[index]);
+      }
+    });
+  });
+
+  fecharModalBtn.addEventListener("click", fecharModal);
+  overlay.addEventListener("click", (e) => {
+    if(e.target === overlay) fecharModal();
+  });
+
+  formEntrega.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    if(!produtoSelecionado) return;
+
+    if(!freteAtual.calculado){
+      freteResultado.classList.add("erro");
+      freteResultado.textContent = "Calcule o frete antes de finalizar o pedido.";
+      cepFreteInput.focus();
+      return;
+    }
+
+    const nome = document.getElementById("nome").value.trim();
+    const cep = document.getElementById("cep").value.trim();
+    const endereco = document.getElementById("endereco").value.trim();
+    const numero = document.getElementById("numero").value.trim();
+    const bairro = document.getElementById("bairro").value.trim();
+    const complemento = document.getElementById("complemento").value.trim();
+    const total = produtoSelecionado.preco + freteAtual.valor;
+
+    let mensagem = `*Novo Pedido - Aura Fragrâncias*\n\n`;
+    mensagem += `*Resumo do Pedido*\n`;
+    mensagem += `Produto: ${produtoSelecionado.nome}\n`;
+    mensagem += `Valor do produto: ${formatarPreco(produtoSelecionado.preco)}\n`;
+    mensagem += `Frete (${freteAtual.descricao}): ${formatarPreco(freteAtual.valor)}\n`;
+    mensagem += `*Total: ${formatarPreco(total)}*\n\n`;
+    mensagem += `*Dados de Entrega*\n`;
+    mensagem += `Nome: ${nome}\n`;
+    mensagem += `CEP: ${cep}\n`;
+    mensagem += `Endereço: ${endereco}, nº ${numero}\n`;
+    mensagem += `Bairro: ${bairro}\n`;
+    if(complemento){
+      mensagem += `Complemento: ${complemento}\n`;
+    }
+    mensagem += `\nAguardo a chave Pix para confirmar o pagamento!`;
+
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${mensagemCodificada}`;
+
+    window.open(url, "_blank");
+
+    fecharModal();
+  });
+
+  renderizarDestaque();
+  renderizarProdutos();
+</script>
+
+</body>
+</html>
