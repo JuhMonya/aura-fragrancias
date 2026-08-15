@@ -132,6 +132,106 @@
     margin-bottom:12px;
     flex-grow:1;
   }
+  /* Ficha tecnica do perfume (inspiracao, familia olfativa, concentracao) */
+  .ficha{
+    font-size:0.8rem;
+    line-height:1.5;
+    color:var(--texto-suave);
+    margin-bottom:14px;
+    flex-grow:1;
+  }
+  .ficha p{ margin:0 0 3px; }
+  .ficha strong{ color:var(--preto); font-weight:600; }
+  .ficha .ficha-nota{
+    margin-top:7px;
+    padding-top:7px;
+    border-top:1px solid var(--cinza);
+    font-size:0.74rem;
+    color:var(--texto-suave);
+  }
+  /* Seletor de tamanho */
+  .tamanhos{
+    display:grid;
+    /* minmax(0,1fr) e nao 1fr: sem isso o "150 ml" nao encolhe e estoura o card */
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:5px;
+    margin-bottom:12px;
+  }
+  .tamanhos .tam{
+    background:#fff;
+    border:1px solid var(--cinza);
+    color:var(--texto-suave);
+    border-radius:6px;
+    padding:7px 1px;
+    min-width:0;
+    font-size:0.72rem;
+    font-weight:600;
+    font-family:inherit;
+    cursor:pointer;
+    transition:all 0.15s ease;
+    white-space:nowrap;
+  }
+  .tamanhos .tam:hover{ border-color:var(--dourado); color:var(--preto); }
+  .tamanhos .tam.ativo{
+    background:var(--preto);
+    border-color:var(--preto);
+    color:var(--dourado-claro);
+  }
+  .badge-linha{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:var(--preto);
+    color:var(--dourado-claro);
+    font-size:0.66rem;
+    font-weight:700;
+    padding:4px 9px;
+    border-radius:4px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    z-index:2;
+  }
+  /* A linha exclusiva tem 3 botoes em vez de 4 */
+  .tamanhos.tres{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
+  .tamanhos.dois{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .tamanhos .tam small{
+    display:block;
+    font-size:0.62rem;
+    font-weight:500;
+    opacity:0.75;
+    letter-spacing:0.2px;
+  }
+  .badge-novo{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:var(--dourado);
+    color:var(--preto);
+    font-size:0.7rem;
+    font-weight:700;
+    padding:4px 9px;
+    border-radius:4px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    z-index:2;
+  }
+  .preco .preco-ml,
+  .destaque-preco .preco-ml{
+    white-space:nowrap;
+    font-size:0.8rem;
+    font-weight:600;
+    color:var(--texto-suave);
+    margin-left:7px;
+  }
+  .destaque-info .tamanhos{ max-width:340px; }
+  /* Quando o produto mistura tipos (Extrait x Deo Parfum) o rotulo vai para a
+     linha de baixo — inline ele quebra no meio e deixa o "·" solto na ponta. */
+  .preco .preco-ml.bloco,
+  .destaque-preco .preco-ml.bloco{
+    display:block;
+    margin-left:0;
+    margin-top:1px;
+  }
   .preco{
     font-size:1.25rem;
     font-weight:700;
@@ -266,52 +366,30 @@
     grid-template-columns:1fr 1fr;
     gap:10px;
   }
+  /* Aviso de frete a combinar (substituiu a antiga calculadora de frete) */
   .frete-box{
     background:var(--cinza-claro);
     border:1px dashed var(--dourado);
     border-radius:8px;
     padding:14px;
     margin-top:16px;
-  }
-  .frete-box h4{
     font-size:0.85rem;
+    line-height:1.5;
+    color:var(--texto-suave);
+  }
+  .frete-box strong{
+    display:block;
     color:var(--preto);
-    margin-bottom:10px;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
+    font-size:0.88rem;
+    margin-bottom:4px;
   }
-  .frete-linha{
-    display:flex;
-    gap:8px;
+  .cep-aviso{
+    font-size:0.78rem;
+    color:var(--texto-suave);
+    margin:-6px 0 12px;
+    min-height:1.1em;
   }
-  .frete-linha input{
-    flex:1;
-    padding:10px 12px;
-    border:1px solid var(--cinza);
-    border-radius:6px;
-    font-size:0.9rem;
-    background:var(--branco);
-  }
-  .btn-frete{
-    background:var(--preto);
-    color:var(--dourado-claro);
-    border:none;
-    padding:0 16px;
-    border-radius:6px;
-    font-size:0.82rem;
-    font-weight:600;
-    cursor:pointer;
-    white-space:nowrap;
-  }
-  .btn-frete:hover{background:var(--dourado); color:var(--preto);}
-  .frete-resultado{
-    margin-top:10px;
-    font-size:0.85rem;
-    color:var(--texto);
-    min-height:1.2em;
-  }
-  .frete-resultado.erro{ color:#c0392b; }
-  .frete-resultado strong{ color:var(--dourado); }
+  .cep-aviso.erro{ color:#c0392b; }
   .total-pedido{
     display:flex;
     justify-content:space-between;
@@ -508,6 +586,9 @@
     gap:26px;
     margin-top:24px;
   }
+  /* Sem isto as abas (que rolam na horizontal) esticam a coluna e estouram a
+     largura da tela no celular. */
+  .colecao-wrap > *{ min-width:0; }
   @media(min-width:900px){
     .colecao-wrap{ grid-template-columns:250px 1fr; align-items:start; }
   }
@@ -767,20 +848,22 @@
         <h4>Categorias</h4>
         <ul class="filtros-lista" id="filtrosLaterais">
           <li><button type="button" class="ativo" data-cat="todos">Coleção Completa</button></li>
+          <li><button type="button" data-cat="exclusiva">Linha Exclusiva</button></li>
+          <li><button type="button" data-cat="cabelo">Perfume de Cabelo</button></li>
           <li><button type="button" data-cat="novidades">Novidades</button></li>
-          <li><button type="button" data-cat="vendidos">Mais Vendidos</button></li>
-          <li><button type="button" data-cat="menor">Menor Preço</button></li>
-          <li><button type="button" data-cat="maior">Maior Preço</button></li>
+          <li><button type="button" data-cat="femininos">Femininos</button></li>
+          <li><button type="button" data-cat="masculinos">Masculinos</button></li>
         </ul>
       </aside>
 
       <div>
         <div class="abas" id="abasCategorias">
           <button type="button" class="ativo" data-cat="todos">Coleção Completa</button>
+          <button type="button" data-cat="exclusiva">Linha Exclusiva</button>
+          <button type="button" data-cat="cabelo">Perfume de Cabelo</button>
           <button type="button" data-cat="novidades">Novidades</button>
-          <button type="button" data-cat="vendidos">Mais Vendidos</button>
-          <button type="button" data-cat="menor">Menor Preço</button>
-          <button type="button" data-cat="maior">Maior Preço</button>
+          <button type="button" data-cat="femininos">Femininos</button>
+          <button type="button" data-cat="masculinos">Masculinos</button>
         </div>
 
         <p class="contador-resultados" id="contadorResultados"></p>
@@ -891,6 +974,8 @@
         </div>
       </div>
 
+      <p class="cep-aviso" id="cepAviso"></p>
+
       <label for="endereco">Endereço (Rua/Avenida) *</label>
       <input type="text" id="endereco" required>
 
@@ -901,16 +986,13 @@
       <input type="text" id="complemento">
 
       <div class="frete-box">
-        <h4>Calcular frete</h4>
-        <div class="frete-linha">
-          <input type="text" id="cepFrete" placeholder="Digite o CEP para calcular">
-          <button type="button" class="btn-frete" id="btnCalcularFrete">Calcular</button>
-        </div>
-        <div class="frete-resultado" id="freteResultado"></div>
+        <strong>Frete a combinar</strong>
+        O valor do frete é combinado com a vendedora após a finalização do pedido,
+        junto com a chave Pix.
       </div>
 
       <div class="total-pedido">
-        <span>Total do pedido</span>
+        <span>Valor do produto</span>
         <span class="valor-total" id="valorTotal"></span>
       </div>
 
@@ -920,149 +1002,187 @@
 </div>
 
 <script>
-  // Catálogo completo (baseado em lista.mercadolivre.com.br/loja/mr-parfum)
-  // Para alterar preços, disponibilidade ou adicionar/remover produtos, edite este array.
+  // ===== Tamanhos e preços =====
+  // Todos os perfumes usam a MESMA tabela de preços. Para reajustar, mude aqui.
+  const TAMANHOS = [
+    { ml: 10,  preco:  32.00 },
+    { ml: 30,  preco:  65.00 },
+    { ml: 50,  preco:  90.00 },
+    { ml: 150, preco: 170.00 }
+  ];
+  // Tamanho que já vem selecionado ao abrir a página (precisa existir em TAMANHOS).
+  const TAMANHO_PADRAO = 10;
+
+  const TEXTO_EXTRAIT =
+    "Extrait de Parfum com 30% de concentração de essência · até 12h de fixação.";
+
+  const TEXTO_MIST =
+    "Body &amp; Hair Mist de 200 ml · perfuma cabelo e corpo, com toque leve para " +
+    "retocar ao longo do dia.";
+
+  // ===== Perfume de Cabelo (Body &amp; Hair Mist) =====
+  // Tamanho único de 200 ml; o preço muda de fragrância para fragrância.
+  function tabelaMist(preco){
+    return [{ ml: 200, preco: preco, tipo: "Body &amp; Hair Mist", curto: "Mist", nota: TEXTO_MIST }];
+  }
+
+  // ===== Linha Exclusiva =====
+  // São dois produtos diferentes por fragrância, com tabelas separadas.
+  // O Extrait custa mais por ml porque tem 30% de essência (fixação até 12h)
+  // contra 20% do Deo Parfum (6h a 8h) — por isso não ficam no mesmo card.
+  const TAMANHOS_EXTRAIT = [
+    { ml: 10, preco:  40.00, tipo: "Extrait de Parfum", curto: "Extrait", nota: TEXTO_EXTRAIT },
+    { ml: 50, preco: 200.00, tipo: "Extrait de Parfum", curto: "Extrait", nota: TEXTO_EXTRAIT }
+  ];
+  const TAMANHOS_PARFUM_100 = [
+    { ml: 100, preco: 190.00, tipo: "Deo Parfum", curto: "Parfum" }
+  ];
+
+  // Texto fixo mostrado embaixo da ficha de cada perfume.
+  const TEXTO_CONCENTRACAO =
+    "Deo Parfum com 20% de concentração de essência · fixação média de 6h a 8h.";
+
+  // Pasta onde ficam as fotos, relativa a este arquivo HTML.
+  const PASTA_IMAGENS = "imagens/";
+
+  // ===== Catálogo =====
+  // OBS: o campo "maisVendido" continua em cada produto mas está inativo — a aba
+  // "Mais Vendidos" foi removida em 14/08/2026. Para trazer de volta, basta
+  // recriar o botão data-cat="vendidos" e o ramo correspondente em filtrarProdutos().
+  // Fonte: catálogo MR PARFUM / MISTER PARFUM (Deo Parfum 150ml).
+  // genero: "Feminino" | "Masculino" | "Compartilhável" (aparece nos dois filtros).
+  // inspiracao: null quando o fornecedor não informa.
   const produtos = [
-    {
-      nome: "Pêra e Frésia 150ml",
-      preco: 225.00,
-      precoOriginal: null,
-      disponivel: true,
-      novidade: false,
-      maisVendido: true,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_844919-MLA94645368550_102025-E.webp",
-      desc: "Fragrância assinatura da casa, notas frutadas e florais."
-    },
-    {
-      nome: "Rosa e Jasmim 150ml",
-      preco: 211.85,
-      precoOriginal: 229.90,
-      disponivel: true,
-      novidade: false,
-      maisVendido: true,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_813146-MLB96066120161_102025-E--perfume-rosa-e-jasmim-150ml-mr-parfum.webp",
-      desc: "Floral delicado com toque fresco e romântico."
-    },
-    {
-      nome: "Miss Blue 150ml",
-      preco: 239.90,
-      precoOriginal: null,
-      disponivel: true,
-      novidade: true,
-      maisVendido: false,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_778046-MLA111955482565_052026-E.webp",
-      desc: "Floral frutal, leve e envolvente."
-    },
-    {
-      nome: "Je T'aime 150ml",
-      preco: 239.90,
-      precoOriginal: null,
-      disponivel: true,
-      novidade: true,
-      maisVendido: false,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_969404-MLB99262886328_112025-E--perfume-150ml-je-taime--floral-frutal.webp",
-      desc: "Floral frutal, doce e marcante."
-    },
-    {
-      nome: "Diva 150ml",
-      preco: 239.90,
-      precoOriginal: null,
-      disponivel: true,
-      novidade: false,
-      maisVendido: true,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_604686-MLA108537232179_032026-E.webp",
-      desc: "Floral amadeirado, elegante e sofisticado."
-    },
-    {
-      nome: "Love Rose 150ml",
-      preco: 243.69,
-      precoOriginal: null,
-      disponivel: true,
-      novidade: false,
-      maisVendido: true,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_791079-MLA111956281135_052026-E.webp",
-      desc: "Floral romântico, notas de rosa em destaque."
-    },
-    {
-      nome: "Femme Fatale 150ml",
-      preco: 243.69,
-      precoOriginal: null,
-      disponivel: true,
-      novidade: false,
-      maisVendido: false,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_952701-MLA110983874810_052026-E.webp",
-      desc: "Oriental floral, intenso e sedutor."
-    },
-    {
-      nome: "Mister Bleu 150ml (Masculino)",
-      preco: 227.90,
-      precoOriginal: 239.90,
-      disponivel: true,
-      novidade: true,
-      maisVendido: false,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_744868-MLA96187903200_102025-E.webp",
-      desc: "Amadeirado especiado, marcante e moderno."
-    },
-    {
-      nome: "Indomable 150ml (Masculino)",
-      preco: 227.90,
-      precoOriginal: 239.90,
-      disponivel: true,
-      novidade: false,
-      maisVendido: true,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_965178-MLA96995644620_112025-E.webp",
-      desc: "Aromático amadeirado, forte personalidade."
-    },
-    {
-      nome: "Rosa e Lichia Extrait de Parfum 50ml",
-      preco: 258.70,
-      precoOriginal: null,
-      disponivel: true,
-      novidade: true,
-      maisVendido: true,
-      img: "https://http2.mlstatic.com/D_Q_NP_2X_962678-MLA98422223078_112025-E.webp",
-      desc: "Edição exclusiva, alta concentração e fixação."
-    }
+    { nome:"Bleu Noir", inspiracao:"Narciso Rodriguez For Him Bleu Noir", familia:"Amadeirado Especiado", genero:"Masculino",
+      img:"imagens/bleu-noir.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Vert Pour Homme", inspiracao:"Versace Pour Homme (Versace)", familia:"Aromático Fougère", genero:"Masculino",
+      img:"imagens/vert-pour-homme.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Rose Lumière", inspiracao:null, familia:"Floral", genero:"Feminino",
+      img:"imagens/rose-lumiere.jpg", disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Amour Tropical", inspiracao:"Tommy Girl (Tommy Hilfiger)", familia:"Floral Frutado", genero:"Feminino",
+      img:"imagens/amour-tropical.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Bergamota &amp; Alecrim", inspiracao:"Criação exclusiva da casa", familia:"Cítrico Aromático", genero:"Feminino",
+      img:"imagens/bergamota-alecrim.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Diva", inspiracao:"Narciso Rodriguez For Her Eau de Parfum", familia:"Floral Amadeirado Almiscarado", genero:"Feminino",
+      img:"imagens/diva.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Flor de Acácia", inspiracao:"Mimosa &amp; Cardamom (Jo Malone)", familia:"Oriental Floral", genero:"Feminino",
+      img:"imagens/flor-de-acacia.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Femme Fatale", inspiracao:"Good Girl (Carolina Herrera)", familia:"Oriental Floral", genero:"Feminino",
+      img:"imagens/femme-fatale.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Gold Scent", inspiracao:"Silver Scent (Jacques Bogart)", familia:"Oriental Amadeirado", genero:"Masculino",
+      img:"imagens/gold-scent.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Indomable", inspiracao:"Sauvage (Dior)", familia:"Oriental Amadeirado", genero:"Masculino",
+      img:"imagens/indomable.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Invencible", inspiracao:"Invictus (Paco Rabanne)", familia:"Aquático Amadeirado", genero:"Masculino",
+      img:"imagens/invencible.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Je T'aime", inspiracao:"J'adore (Dior)", familia:"Floral Frutado", genero:"Feminino",
+      img:"imagens/je-taime.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"King Aventus", inspiracao:"Aventus (Creed)", familia:"Chipre Frutado", genero:"Masculino",
+      img:"imagens/king-aventus.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"La Belle Nuit", inspiracao:"La Vie Est Belle (Lancôme)", familia:"Floral Frutado Gourmand", genero:"Feminino",
+      img:"imagens/la-belle-nuit.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Limão e Mandarina", inspiracao:"Lime Basil &amp; Mandarin (Jo Malone)", familia:"Cítrico Aromático", genero:"Feminino",
+      img:"imagens/limao-e-mandarina.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Love Rose", inspiracao:"Chloé Eau de Parfum", familia:"Floral", genero:"Feminino",
+      img:"imagens/love-rose.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Mister Bleu", inspiracao:"Bleu de Chanel (Chanel)", familia:"Amadeirado Aromático", genero:"Masculino",
+      img:"imagens/mister-bleu.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Mister Miyake", inspiracao:"L'Eau d'Issey Pour Homme (Issey Miyake)", familia:"Aquático Amadeirado", genero:"Masculino",
+      img:"imagens/mister-miyake.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Miss Blue", inspiracao:"Light Blue (Dolce &amp; Gabbana)", familia:"Floral Frutado", genero:"Feminino",
+      img:"imagens/miss-blue.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Mr Man", inspiracao:"Bvlgari Pour Homme", familia:"Amadeirado Floral Almiscarado", genero:"Masculino",
+      img:"imagens/mr-man.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"My Choices", inspiracao:"My Way (Giorgio Armani)", familia:"Floral", genero:"Feminino",
+      img:"imagens/my-choices.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Neroli e Vetiver", inspiracao:"Basil &amp; Neroli (Jo Malone)", familia:"Floral Verde", genero:"Feminino",
+      img:"imagens/neroli-e-vetiver.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Number One", inspiracao:"212 Men (Carolina Herrera)", familia:"Amadeirado Floral Almiscarado", genero:"Masculino",
+      img:"imagens/number-one.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Pêra e Frésia", inspiracao:"English Pear &amp; Freesia (Jo Malone)", familia:"Chipre Frutado", genero:"Feminino",
+      img:"imagens/pera-e-fresia.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Rich Man", inspiracao:"1 Million (Rabanne)", familia:"Amadeirado Especiado", genero:"Masculino",
+      img:"imagens/rich-man.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Rose Bloom", inspiracao:"212 VIP Rosé (Carolina Herrera)", familia:"Floral Frutado Amadeirado", genero:"Feminino",
+      img:"imagens/rose-bloom.jpg", disponivel:true, novidade:false, maisVendido:false },
+    { nome:"Rosa e Jasmim", inspiracao:"Coco Mademoiselle (Chanel)", familia:"Chipre Floral", genero:"Feminino",
+      img:"imagens/rosa-e-jasmim.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Terre Black", inspiracao:"Terre d'Hermès (Hermès)", familia:"Amadeirado Especiado", genero:"Masculino",
+      img:"imagens/terre-black.jpg", disponivel:true, novidade:false, maisVendido:true },
+    { nome:"Mr Black", inspiracao:null, familia:"Amadeirado", genero:"Masculino",
+      img:"imagens/mr-black.jpg", disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Mister Blue", inspiracao:"Polo Blue (Ralph Lauren)", familia:"Aromático Fougère", genero:"Masculino",
+      img:"imagens/mister-blue.jpg", disponivel:true, novidade:false, maisVendido:false },
+
+    // ----- Linha Exclusiva: 3 extratos + 3 deo parfum -----
+    // "tamanhos" sobrescreve a tabela padrão; "imgPorTamanho" troca a foto junto
+    // com o botão (o frasco de 10ml e o de 50ml são diferentes).
+    { nome:"Absolu Pêra e Frésia Extrait", inspiracao:"Criação exclusiva da casa", familia:"Chipre Frutado Floral", genero:"Feminino",
+      linha:"Exclusiva", tamanhos:TAMANHOS_EXTRAIT,
+      img:"imagens/exclusiva-pera-e-fresia-10.jpg",
+      imgPorTamanho:{ 10:"imagens/exclusiva-pera-e-fresia-10.jpg", 50:"imagens/exclusiva-pera-e-fresia-50.jpg" },
+      disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Rosa e Lichia Extrait", inspiracao:"Delina (Parfums de Marly)", familia:"Floral", genero:"Feminino",
+      linha:"Exclusiva", tamanhos:TAMANHOS_EXTRAIT,
+      img:"imagens/exclusiva-rosa-e-lichia-10.jpg",
+      imgPorTamanho:{ 10:"imagens/exclusiva-rosa-e-lichia-10.jpg", 50:"imagens/exclusiva-rosa-e-lichia-50.jpg" },
+      disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Rosa e Cereja Extrait", inspiracao:"Carmina (Creed)", familia:"Floral Amadeirado Almiscarado", genero:"Feminino",
+      linha:"Exclusiva", tamanhos:TAMANHOS_EXTRAIT,
+      img:"imagens/exclusiva-rosa-e-cereja-10.jpg",
+      imgPorTamanho:{ 10:"imagens/exclusiva-rosa-e-cereja-10.jpg", 50:"imagens/exclusiva-rosa-e-cereja-50.jpg" },
+      disponivel:true, novidade:true, maisVendido:false },
+
+    { nome:"Absolu Pêra e Frésia Deo Parfum", inspiracao:"Criação exclusiva da casa", familia:"Chipre Frutado Floral", genero:"Feminino",
+      linha:"Exclusiva", tamanhos:TAMANHOS_PARFUM_100,
+      img:"imagens/exclusiva-pera-e-fresia-100.jpg",
+      disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Rosa e Lichia Deo Parfum", inspiracao:"Delina (Parfums de Marly)", familia:"Floral", genero:"Feminino",
+      linha:"Exclusiva", tamanhos:TAMANHOS_PARFUM_100,
+      img:"imagens/exclusiva-rosa-e-lichia-100.jpg",
+      disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Rosa e Cereja Deo Parfum", inspiracao:"Carmina (Creed)", familia:"Floral Amadeirado Almiscarado", genero:"Feminino",
+      linha:"Exclusiva", tamanhos:TAMANHOS_PARFUM_100,
+      img:"imagens/exclusiva-rosa-e-cereja-100.jpg",
+      disponivel:true, novidade:true, maisVendido:false },
+
+    // ----- Perfume de Cabelo -----
+    { nome:"Rose Lumière Hair Mist", inspiracao:null, familia:"Floral", genero:"Feminino",
+      linha:"Cabelo", selo:"Hair Mist", tamanhos:tabelaMist(110.00),
+      img:"imagens/cabelo-rose-lumiere.jpg", disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Pêra e Frésia Hair Mist", inspiracao:"English Pear &amp; Freesia (Jo Malone)", familia:"Chipre Frutado", genero:"Feminino",
+      linha:"Cabelo", selo:"Hair Mist", tamanhos:tabelaMist(110.00),
+      img:"imagens/cabelo-pera-e-fresia.jpg", disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Absolu Pêra e Frésia Hair Mist", inspiracao:"Criação exclusiva da casa", familia:"Chipre Frutado Floral", genero:"Feminino",
+      linha:"Cabelo", selo:"Hair Mist", tamanhos:tabelaMist(120.00),
+      img:"imagens/cabelo-absolu-pera-e-fresia.jpg", disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Rosa e Lichia Hair Mist", inspiracao:"Delina (Parfums de Marly)", familia:"Floral", genero:"Feminino",
+      linha:"Cabelo", selo:"Hair Mist", tamanhos:tabelaMist(120.00),
+      img:"imagens/cabelo-rosa-e-lichia.jpg", disponivel:true, novidade:true, maisVendido:false },
+    { nome:"Rosa e Cereja Hair Mist", inspiracao:"Carmina (Creed)", familia:"Floral Amadeirado Almiscarado", genero:"Feminino",
+      linha:"Cabelo", selo:"Hair Mist", tamanhos:tabelaMist(120.00),
+      img:"imagens/cabelo-rosa-e-cereja.jpg", disponivel:true, novidade:true, maisVendido:false }
   ];
 
   // ===== Produto em DESTAQUE na página inicial =====
-  // Troque "nome" para destacar outro perfume (precisa ser igual ao nome no array acima).
+  // "nome" precisa ser idêntico ao nome de um produto do array acima.
   const DESTAQUE = {
-    nome: "Rosa e Lichia Extrait de Parfum 50ml",
+    nome: "Pêra e Frésia",
     selo: "Fragrância em Destaque",
-    subtitulo: "Extrait de Parfum · 50ml",
-    texto: "Nossa fragrância mais concentrada. A rosa aveludada encontra a doçura suculenta da lichia sobre um fundo de âmbar e almíscar branco — resultado é um rastro sofisticado que acompanha você o dia inteiro.",
+    subtitulo: "Deo Parfum · 10, 30, 50 e 150 ml",
+    texto: "A fragrância que mais sai da nossa coleção, agora disponível em quatro tamanhos.",
     notas: [
-      { titulo: "Saída",       valor: "Lichia, bergamota e pêra" },
-      { titulo: "Corpo",       valor: "Rosa búlgara, peônia e violeta" },
-      { titulo: "Fundo",       valor: "Âmbar, almíscar branco e cedro" },
-      { titulo: "Fixação",     valor: "Alta — 8 a 12 horas" },
-      { titulo: "Ocasião",     valor: "Noite, eventos e uso especial" }
+      { titulo: "Inspiração",    valor: "English Pear &amp; Freesia (Jo Malone)" },
+      { titulo: "Família",       valor: "Chipre Frutado (Feminino)" },
+      { titulo: "Concentração",  valor: "Deo Parfum — 20% de essência" },
+      { titulo: "Fixação",       valor: "Média — 6 a 8 horas" },
+      { titulo: "Ocasião",       valor: "Dia a dia, trabalho e encontros" }
     ]
-  };
-
-  // Tabela de frete (estimativa simplificada por região).
-  // Natal e Nova Parnamirim: entrega local (motoboy). Demais localidades: envio via Correios.
-  const FRETE_LOCAL = 15.00;
-  const FRETE_POR_REGIAO = {
-    RN: 25.00,               // demais cidades do Rio Grande do Norte
-    Nordeste: 30.00,
-    "Sudeste/Sul": 38.00,
-    "Norte/Centro-Oeste": 45.00
-  };
-  const UF_REGIAO = {
-    RN:"RN", AL:"Nordeste", BA:"Nordeste", CE:"Nordeste", MA:"Nordeste", PB:"Nordeste",
-    PE:"Nordeste", PI:"Nordeste", SE:"Nordeste",
-    SP:"Sudeste/Sul", RJ:"Sudeste/Sul", MG:"Sudeste/Sul", ES:"Sudeste/Sul",
-    PR:"Sudeste/Sul", SC:"Sudeste/Sul", RS:"Sudeste/Sul",
-    AC:"Norte/Centro-Oeste", AP:"Norte/Centro-Oeste", AM:"Norte/Centro-Oeste", DF:"Norte/Centro-Oeste",
-    GO:"Norte/Centro-Oeste", MT:"Norte/Centro-Oeste", MS:"Norte/Centro-Oeste", PA:"Norte/Centro-Oeste",
-    RO:"Norte/Centro-Oeste", RR:"Norte/Centro-Oeste", TO:"Norte/Centro-Oeste"
   };
 
   // Número de WhatsApp da vendedora — usado apenas para montar o link de envio,
   // não é exibido em nenhum lugar da página.
-  const NUMERO_WHATSAPP = "5584999419888";
+  const NUMERO_WHATSAPP = "5584991138834";
 
   const grid = document.getElementById("grid-produtos");
   const overlay = document.getElementById("overlay");
@@ -1070,11 +1190,9 @@
   const resumoPreco = document.getElementById("resumoPreco");
   const formEntrega = document.getElementById("formEntrega");
   const fecharModalBtn = document.getElementById("fecharModal");
-  const cepFreteInput = document.getElementById("cepFrete");
-  const btnCalcularFrete = document.getElementById("btnCalcularFrete");
-  const freteResultado = document.getElementById("freteResultado");
   const valorTotalEl = document.getElementById("valorTotal");
   const cepEntregaInput = document.getElementById("cep");
+  const cepAviso = document.getElementById("cepAviso");
   const destaqueBox = document.getElementById("destaqueBox");
   const campoBusca = document.getElementById("campoBusca");
   const abasCategorias = document.getElementById("abasCategorias");
@@ -1082,7 +1200,8 @@
   const contadorResultados = document.getElementById("contadorResultados");
 
   let produtoSelecionado = null;
-  let freteAtual = { valor: 0, descricao: "", calculado: false };
+  // Tamanho escolhido em cada card: { indiceDoProduto: ml }
+  const tamanhoEscolhido = {};
   let categoriaAtual = "todos";
   let termoBusca = "";
 
@@ -1090,64 +1209,131 @@
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   }
 
-  function atualizarTotal(){
-    if(!produtoSelecionado) return;
-    const total = produtoSelecionado.preco + (freteAtual.calculado ? freteAtual.valor : 0);
-    valorTotalEl.textContent = formatarPreco(total);
+  // Tabela de tamanhos de um produto: a própria, se tiver, senão a padrão.
+  function tabelaDoProduto(produto){
+    return produto.tamanhos || TAMANHOS;
   }
 
-  async function calcularFrete(cepBruto){
+  // Dados do tamanho escolhido (preço, tipo). Cai no primeiro se o ml não existir.
+  function tamanhoDoProduto(produto, ml){
+    const tabela = tabelaDoProduto(produto);
+    return tabela.find(t => t.ml === Number(ml)) || tabela[0];
+  }
+
+  // Tamanho atualmente escolhido para um produto (índice no array produtos).
+  function mlDoProduto(indice){
+    if(tamanhoEscolhido[indice]) return tamanhoEscolhido[indice];
+    const tabela = tabelaDoProduto(produtos[indice]);
+    // usa o padrão global se ele existir nessa tabela; senão, o menor tamanho
+    return tabela.some(t => t.ml === TAMANHO_PADRAO) ? TAMANHO_PADRAO : tabela[0].ml;
+  }
+
+  // Linha do preço: valor + tamanho + tipo (só quando o produto mistura tipos)
+  function textoPreco(produto, ml){
+    const t = tamanhoDoProduto(produto, ml);
+    const tabela = tabelaDoProduto(produto);
+    const misturaTipos = new Set(tabela.map(x => x.tipo)).size > 1;
+    return misturaTipos && t.tipo
+      ? `${formatarPreco(t.preco)}<span class="preco-ml bloco">${t.ml} ml · ${t.tipo}</span>`
+      : `${formatarPreco(t.preco)}<span class="preco-ml">/ ${t.ml} ml</span>`;
+  }
+
+  // Botões de tamanho
+  function montarBotoesTamanho(indice){
+    const produto = produtos[indice];
+    const tabela = tabelaDoProduto(produto);
+    // Um botão sozinho e sempre marcado não é escolha nenhuma — só polui o card.
+    if(tabela.length < 2) return "";
+    const atual = mlDoProduto(indice);
+    const misturaTipos = new Set(tabela.map(x => x.tipo)).size > 1;
+    const classe = tabela.length === 3 ? "tres" : (tabela.length === 2 ? "dois" : "");
+    return `<div class="tamanhos ${classe}" data-produto="${indice}">` +
+      tabela.map(t =>
+        `<button type="button" class="tam ${t.ml === atual ? "ativo" : ""}" data-produto="${indice}" data-ml="${t.ml}">` +
+        `${t.ml} ml${misturaTipos && t.curto ? `<small>${t.curto}</small>` : ""}</button>`
+      ).join("") +
+    `</div>`;
+  }
+
+  // Ficha com inspiração, família olfativa e concentração
+  function montarFicha(produto, ml, indice){
+    const insp = produto.inspiracao
+      ? `<p><strong>Inspiração:</strong> ${produto.inspiracao}</p>`
+      : "";
+    const t = tamanhoDoProduto(produto, ml);
+    const nota = t.nota || TEXTO_CONCENTRACAO;
+    return `<div class="ficha">
+        ${insp}
+        <p><strong>Família olfativa:</strong> ${produto.familia} (${produto.genero})</p>
+        <p class="ficha-nota" data-nota="${indice}">${nota}</p>
+      </div>`;
+  }
+
+  // Troca o tamanho e atualiza preço, foto e nota daquele produto — sem
+  // re-renderizar a grade inteira (o cliente perderia a posição da rolagem).
+  function trocarTamanho(container, indice, ml){
+    ml = Number(ml);
+    const produto = produtos[indice];
+    const t = tamanhoDoProduto(produto, ml);
+    tamanhoEscolhido[indice] = ml;
+
+    container.querySelectorAll(`.tam[data-produto="${indice}"]`).forEach(b => {
+      b.classList.toggle("ativo", Number(b.dataset.ml) === ml);
+    });
+    container.querySelectorAll(`[data-preco="${indice}"]`).forEach(el => {
+      el.innerHTML = textoPreco(produto, ml);
+    });
+    container.querySelectorAll(`[data-nota="${indice}"]`).forEach(el => {
+      el.innerHTML = t.nota || TEXTO_CONCENTRACAO;
+    });
+    if(produto.imgPorTamanho && produto.imgPorTamanho[ml]){
+      container.querySelectorAll(`[data-foto="${indice}"]`).forEach(el => {
+        el.src = produto.imgPorTamanho[ml];
+      });
+    }
+  }
+
+  function atualizarTotal(){
+    if(!produtoSelecionado) return;
+    valorTotalEl.textContent = formatarPreco(produtoSelecionado.preco);
+  }
+
+  // ===== CEP =====
+  // Não há cálculo de frete: o valor é combinado no WhatsApp. O CEP serve só
+  // para preencher endereço e bairro sozinho e evitar erro de digitação.
+  // A API ViaCEP é pública e gratuita; se falhar, o cliente digita à mão.
+  async function preencherEnderecoPeloCep(cepBruto){
     const cep = cepBruto.replace(/\D/g, "");
+    cepAviso.classList.remove("erro");
+
     if(cep.length !== 8){
-      freteResultado.classList.add("erro");
-      freteResultado.textContent = "Digite um CEP válido (8 dígitos).";
+      cepAviso.textContent = cep.length ? "CEP incompleto — precisa ter 8 dígitos." : "";
+      if(cep.length) cepAviso.classList.add("erro");
       return;
     }
 
-    freteResultado.classList.remove("erro");
-    freteResultado.textContent = "Calculando frete...";
+    cepAviso.textContent = "Buscando endereço...";
 
     try{
       const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
       const dados = await resposta.json();
+      if(dados.erro) throw new Error("CEP não encontrado");
 
-      if(dados.erro){
-        throw new Error("CEP não encontrado");
-      }
+      const endereco = document.getElementById("endereco");
+      const bairro = document.getElementById("bairro");
+      if(dados.logradouro) endereco.value = dados.logradouro;
+      if(dados.bairro) bairro.value = dados.bairro;
 
-      const cidade = (dados.localidade || "").toLowerCase();
-      const uf = dados.uf;
-      const ehLocal = uf === "RN" && (cidade.includes("natal") || cidade.includes("parnamirim"));
-
-      if(ehLocal){
-        freteAtual = {
-          valor: FRETE_LOCAL,
-          descricao: `Entrega local (motoboy) em ${dados.localidade}/${uf}`,
-          calculado: true
-        };
-      } else {
-        const regiao = UF_REGIAO[uf] || "Norte/Centro-Oeste";
-        const valor = FRETE_POR_REGIAO[regiao];
-        freteAtual = {
-          valor: valor,
-          descricao: `Envio via Correios para ${dados.localidade}/${uf}`,
-          calculado: true
-        };
-      }
-
-      freteResultado.innerHTML = `${freteAtual.descricao}<br>Frete: <strong>${formatarPreco(freteAtual.valor)}</strong>`;
-      cepEntregaInput.value = dados.cep || cepEntregaInput.value;
-      atualizarTotal();
+      cepAviso.textContent = `${dados.localidade}/${dados.uf}`;
+      document.getElementById("numero").focus();
     } catch(erro){
-      freteAtual = { valor: 0, descricao: "", calculado: false };
-      freteResultado.classList.add("erro");
-      freteResultado.textContent = "Não foi possível calcular o frete para esse CEP. Verifique e tente novamente.";
-      atualizarTotal();
+      cepAviso.classList.add("erro");
+      cepAviso.textContent = "Não encontramos esse CEP. Você pode preencher o endereço à mão.";
     }
   }
 
-  btnCalcularFrete.addEventListener("click", () => {
-    calcularFrete(cepFreteInput.value);
+  cepEntregaInput.addEventListener("blur", () => {
+    preencherEnderecoPeloCep(cepEntregaInput.value);
   });
 
   // Remove acentos para a busca funcionar com ou sem acentuação
@@ -1160,17 +1346,22 @@
 
     if(termoBusca){
       const alvo = normalizar(termoBusca);
-      lista = lista.filter(p => normalizar(p.nome + " " + p.desc).includes(alvo));
+      lista = lista.filter(p =>
+        normalizar(p.nome + " " + (p.inspiracao || "") + " " + p.familia + " " + p.genero).includes(alvo)
+      );
     }
 
-    if(categoriaAtual === "novidades"){
+    if(categoriaAtual === "exclusiva"){
+      lista = lista.filter(p => p.linha === "Exclusiva");
+    } else if(categoriaAtual === "cabelo"){
+      lista = lista.filter(p => p.linha === "Cabelo");
+    } else if(categoriaAtual === "novidades"){
       lista = lista.filter(p => p.novidade);
-    } else if(categoriaAtual === "vendidos"){
-      lista = lista.filter(p => p.maisVendido);
-    } else if(categoriaAtual === "menor"){
-      lista.sort((a, b) => a.preco - b.preco);
-    } else if(categoriaAtual === "maior"){
-      lista.sort((a, b) => b.preco - a.preco);
+    } else if(categoriaAtual === "femininos"){
+      // Compartilháveis (unissex) aparecem nos dois filtros de gênero
+      lista = lista.filter(p => p.genero === "Feminino" || p.genero === "Compartilhável");
+    } else if(categoriaAtual === "masculinos"){
+      lista = lista.filter(p => p.genero === "Masculino" || p.genero === "Compartilhável");
     }
 
     return lista;
@@ -1178,26 +1369,28 @@
 
   function montarCard(produto){
     const indisponivel = produto.disponivel === false;
-    const badge = produto.precoOriginal
-      ? `<span class="badge-off">-${Math.round((1 - produto.preco / produto.precoOriginal) * 100)}% OFF</span>`
-      : "";
-    const precoHtml = produto.precoOriginal
-      ? `<span class="preco-original">${formatarPreco(produto.precoOriginal)}</span>${formatarPreco(produto.preco)}`
-      : formatarPreco(produto.preco);
+    const i = produto.indiceOriginal;
+    const ml = mlDoProduto(i);
+    // Um selo por card: os dois juntos se sobrepõem quando a grade tem 4 colunas.
+    const selo = produto.linha
+      ? `<span class="badge-linha">${produto.selo || produto.linha}</span>`
+      : (produto.novidade ? `<span class="badge-novo">Novidade</span>` : "");
+    const foto = (produto.imgPorTamanho && produto.imgPorTamanho[ml]) || produto.img;
 
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      ${badge}
-      <img src="${produto.img}" alt="${produto.nome}" style="${indisponivel ? "filter:grayscale(1);opacity:0.6;" : ""}">
+      ${selo}
+      <img src="${foto}" data-foto="${i}" alt="${produto.nome}" loading="lazy" style="${indisponivel ? "filter:grayscale(1);opacity:0.6;" : ""}">
       <div class="card-body">
         <h2>${produto.nome}</h2>
-        <p class="desc">${produto.desc}</p>
-        <p class="preco">${precoHtml}</p>
+        ${montarFicha(produto, ml, i)}
+        ${montarBotoesTamanho(i)}
+        <p class="preco" data-preco="${i}">${textoPreco(produto, ml)}</p>
         ${
           indisponivel
             ? `<button class="btn-comprar" disabled style="background:var(--cinza);color:var(--texto-suave);cursor:not-allowed;">Indisponível</button>`
-            : `<button class="btn-comprar" data-index="${produto.indiceOriginal}">Comprar Agora</button>`
+            : `<button class="btn-comprar" data-index="${i}">Comprar Agora</button>`
         }
       </div>
     `;
@@ -1227,6 +1420,7 @@
     if(!produto || !destaqueBox) return;
 
     const indice = produtos.indexOf(produto);
+    const ml = mlDoProduto(indice);
     const notasHtml = DESTAQUE.notas
       .map(n => `<li><strong>${n.titulo}</strong><span>${n.valor}</span></li>`)
       .join("");
@@ -1234,14 +1428,15 @@
     destaqueBox.innerHTML = `
       <div class="destaque-foto">
         <span class="selo-destaque">${DESTAQUE.selo}</span>
-        <img src="${produto.img}" alt="${produto.nome}">
+        <img src="${(produto.imgPorTamanho && produto.imgPorTamanho[ml]) || produto.img}" data-foto="${indice}" alt="${produto.nome}">
       </div>
       <div class="destaque-info">
         <span class="sub">${DESTAQUE.subtitulo}</span>
-        <h3>${produto.nome.replace(/ (Extrait de Parfum )?\d+ml.*/i, "")}</h3>
+        <h3>${produto.nome}</h3>
         <p class="texto">${DESTAQUE.texto}</p>
         <ul class="notas">${notasHtml}</ul>
-        <p class="destaque-preco">${formatarPreco(produto.preco)}</p>
+        ${montarBotoesTamanho(indice)}
+        <p class="destaque-preco" data-preco="${indice}">${textoPreco(produto, ml)}</p>
         <button class="btn-comprar" data-index="${indice}">Comprar Agora</button>
       </div>
     `;
@@ -1316,13 +1511,15 @@
     });
   }
 
-  function abrirModal(produto){
-    produtoSelecionado = produto;
-    resumoNome.textContent = produto.nome;
-    resumoPreco.textContent = formatarPreco(produto.preco);
-    freteAtual = { valor: 0, descricao: "", calculado: false };
-    freteResultado.classList.remove("erro");
-    freteResultado.textContent = "";
+  function abrirModal(indice){
+    const produto = produtos[indice];
+    const ml = mlDoProduto(indice);
+    const t = tamanhoDoProduto(produto, ml);
+    produtoSelecionado = { ...produto, ml: t.ml, preco: t.preco, tipo: t.tipo || "Deo Parfum" };
+    resumoNome.textContent = `${produto.nome} — ${t.ml} ml`;
+    resumoPreco.textContent = formatarPreco(produtoSelecionado.preco);
+    cepAviso.classList.remove("erro");
+    cepAviso.textContent = "";
     atualizarTotal();
     overlay.classList.add("ativo");
     document.body.style.overflow = "hidden";
@@ -1333,17 +1530,23 @@
     document.body.style.overflow = "";
     formEntrega.reset();
     produtoSelecionado = null;
-    freteAtual = { valor: 0, descricao: "", calculado: false };
-    freteResultado.textContent = "";
+    cepAviso.classList.remove("erro");
+    cepAviso.textContent = "";
   }
 
-  // Botões "Comprar Agora" — na grade e no bloco de destaque
+  // Cliques na grade e no destaque: trocar tamanho ou abrir o checkout
   [grid, destaqueBox].forEach(container => {
     if(!container) return;
     container.addEventListener("click", (e) => {
-      if(e.target.classList.contains("btn-comprar") && !e.target.disabled){
-        const index = e.target.getAttribute("data-index");
-        abrirModal(produtos[index]);
+      const btnTam = e.target.closest("button.tam");
+      if(btnTam){
+        // o tamanho vale para os dois blocos (grade e destaque)
+        trocarTamanho(document, Number(btnTam.dataset.produto), Number(btnTam.dataset.ml));
+        return;
+      }
+      const btnComprar = e.target.closest("button.btn-comprar");
+      if(btnComprar && !btnComprar.disabled){
+        abrirModal(Number(btnComprar.getAttribute("data-index")));
       }
     });
   });
@@ -1358,27 +1561,19 @@
 
     if(!produtoSelecionado) return;
 
-    if(!freteAtual.calculado){
-      freteResultado.classList.add("erro");
-      freteResultado.textContent = "Calcule o frete antes de finalizar o pedido.";
-      cepFreteInput.focus();
-      return;
-    }
-
     const nome = document.getElementById("nome").value.trim();
     const cep = document.getElementById("cep").value.trim();
     const endereco = document.getElementById("endereco").value.trim();
     const numero = document.getElementById("numero").value.trim();
     const bairro = document.getElementById("bairro").value.trim();
     const complemento = document.getElementById("complemento").value.trim();
-    const total = produtoSelecionado.preco + freteAtual.valor;
 
     let mensagem = `*Novo Pedido - Aura Fragrâncias*\n\n`;
     mensagem += `*Resumo do Pedido*\n`;
     mensagem += `Produto: ${produtoSelecionado.nome}\n`;
-    mensagem += `Valor do produto: ${formatarPreco(produtoSelecionado.preco)}\n`;
-    mensagem += `Frete (${freteAtual.descricao}): ${formatarPreco(freteAtual.valor)}\n`;
-    mensagem += `*Total: ${formatarPreco(total)}*\n\n`;
+    mensagem += `Tamanho: ${produtoSelecionado.ml} ml (${produtoSelecionado.tipo})\n`;
+    mensagem += `*Valor do produto: ${formatarPreco(produtoSelecionado.preco)}*\n`;
+    mensagem += `Frete: a combinar\n\n`;
     mensagem += `*Dados de Entrega*\n`;
     mensagem += `Nome: ${nome}\n`;
     mensagem += `CEP: ${cep}\n`;
@@ -1387,7 +1582,7 @@
     if(complemento){
       mensagem += `Complemento: ${complemento}\n`;
     }
-    mensagem += `\nAguardo a chave Pix para confirmar o pagamento!`;
+    mensagem += `\nPoderia me informar o valor do frete e a chave Pix, por favor?`;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
     const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${mensagemCodificada}`;
